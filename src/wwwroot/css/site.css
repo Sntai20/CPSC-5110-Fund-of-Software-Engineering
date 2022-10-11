@@ -110,8 +110,10 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    /*Change background color of home page to powder blue.*/
+    background-color: #e6f3ff;
 }
 p {
     font-family: 'Nunito', sans-serif;
