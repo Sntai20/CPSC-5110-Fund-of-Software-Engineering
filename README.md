@@ -19,5 +19,5 @@ Each project can also be directly run from the command line.
 * Open a terminal/command prompt and enter the following command in the command shell to run the application.
 
 ```dotnet
-dotnet run --project  MyContosoCrafts.WebSite/src/MyContosoCrafts.WebSite.csproj 
+dotnet run --project  ContosoCrafts.WebSite/src/ContosoCrafts.WebSite.csproj 
 ```
