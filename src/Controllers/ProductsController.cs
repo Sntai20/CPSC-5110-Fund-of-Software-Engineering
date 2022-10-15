@@ -11,12 +11,12 @@ namespace ContosoCrafts.WebSite.Controllers
     [Route("[controller]")]
     public class ProductsController : ControllerBase
     {
-        public ProductsController(JsonFileProductService productService)
+        public ProductsController(JsonFileArticleService productService)
         {
             ProductService = productService;
         }
 
-        public JsonFileProductService ProductService { get; }
+        public JsonFileArticleService ProductService { get; }
 
         [HttpGet]
         public IEnumerable<ProductModel> Get() 

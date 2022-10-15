@@ -8,10 +8,10 @@ namespace ContosoCrafts.WebSite.Pages.Product
     public class ReadModel : PageModel
     {
         // Data Middletier
-        public JsonFileProductService ProductService { get; }
+        public JsonFileArticleService ProductService { get; }
 
         // Default Constructor
-        public ReadModel(JsonFileProductService productService)
+        public ReadModel(JsonFileArticleService productService)
         {
             ProductService = productService;
         }

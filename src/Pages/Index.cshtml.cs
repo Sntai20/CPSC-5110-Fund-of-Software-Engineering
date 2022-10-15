@@ -14,13 +14,13 @@ namespace ContosoCrafts.WebSite.Pages
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger,
-            JsonFileProductService productService)
+            JsonFileArticleService productService)
         {
             _logger = logger;
             ProductService = productService;
         }
 
-        public JsonFileProductService ProductService { get; }
+        public JsonFileArticleService ProductService { get; }
         public IEnumerable<ProductModel> Products { get; private set; }
   
         public void OnGet()
