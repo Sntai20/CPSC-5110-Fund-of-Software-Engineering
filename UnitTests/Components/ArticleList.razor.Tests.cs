@@ -10,7 +10,7 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Components
 {
-    public class ProductListTests : BunitTestContext
+    public class ArticleListTests : BunitTestContext
     {
         #region TestSetup
 
@@ -22,7 +22,7 @@ namespace UnitTests.Components
         #endregion TestSetup
 
         [Test]
-        public void ProductList_Default_Should_Return_Content()
+        public void ArticleList_Default_Should_Return_Content()
         {
             // Arrange
             Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);

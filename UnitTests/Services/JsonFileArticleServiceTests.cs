@@ -38,7 +38,7 @@ namespace UnitTests.Pages.Article.AddRating
             // Arrange
 
             // Act
-            //var result = TestHelper.ProductService.AddRating(null, 1);
+            //var result = TestHelper.ArticleService.AddRating(null, 1);
 
             // Assert
             //Assert.AreEqual(false, result);

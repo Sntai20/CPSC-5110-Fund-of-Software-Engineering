@@ -56,10 +56,10 @@ namespace ContosoCrafts.WebSite
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
 
-                // endpoints.MapGet("/products", (context) => 
+                // endpoints.MapGet("/articles", (context) => 
                 // {
-                //     var products = app.ApplicationServices.GetService<JsonFileProductService>().GetProducts();
-                //     var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
+                //     var articles = app.ApplicationServices.GetService<JsonFileArticleService>().GetArticles();
+                //     var json = JsonSerializer.Serialize<IEnumerable<Article>>(articles);
                 //     return context.Response.WriteAsync(json);
                 // });
             });

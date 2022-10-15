@@ -23,7 +23,7 @@ namespace UnitTests
     /// 
     /// The View Data and Teamp Data
     /// 
-    /// The Product Service
+    /// The Article Service
     /// </summary>
     public static class TestHelper
     {
