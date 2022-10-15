@@ -1,5 +1,5 @@
 ﻿@page
-@model ContosoCrafts.WebSite.Pages.Product.IndexModel
+@model ContosoCrafts.WebSite.Pages.Article.IndexModel
 @{
     ViewData["Title"] = "Index page";
 }
@@ -13,10 +13,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var product in Model.Products)
+            @foreach (var article in Model.Articles)
             {
                 <tr>
-                    <td>@product.Title</td>
+                    <td>@article.Title</td>
                     @*<td><a asp-page="Read" asp-route-id="@product.Id">Read</a></td>*@
                 </tr>
             }
