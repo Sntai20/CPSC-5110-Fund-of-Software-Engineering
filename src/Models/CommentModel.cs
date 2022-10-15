@@ -2,7 +2,7 @@
 namespace ContosoCrafts.WebSite.Models
 {
     /// <summary>
-    /// Comments entered by the user about the Product
+    /// Comments entered by the user about the Article
     /// </summary>
     public class CommentModel
     {

@@ -7,8 +7,10 @@ namespace ContosoCrafts.WebSite.Models
 {
     public class ArticleModel
     {
+        // Properties: Unique Identifier, Author(s), Publish Date, URL, Image, Title, Tags, Article Text/Body.
         public string Id { get; set; }
-        public string Maker { get; set; }
+        public string Author { get; set; }
+        public string PublishDate { get; set; }
 
         [JsonPropertyName("img")]
         public string Image { get; set; }
@@ -22,14 +24,12 @@ namespace ContosoCrafts.WebSite.Models
 
         public int[] Ratings { get; set; }
 
-        public ArticleTypeEnum ProductType { get; set; } = ArticleTypeEnum.Undefined;
-
-        public string Quantity { get; set; }
+        public ArticleTypeEnum ArticleType { get; set; } = ArticleTypeEnum.Undefined;
 
         [Range (-1, 100, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
         public int Price { get; set; }
 
-        // Store the Comments entered by the users on this product
+        // Store the Comments entered by the users on this article.
         public List<CommentModel> CommentList { get; set; } = new List<CommentModel>();
 
         public override string ToString() => JsonSerializer.Serialize<ArticleModel>(this);

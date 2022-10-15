@@ -38,24 +38,24 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Add Rating
         /// 
-        /// Take in the product ID and the rating
+        /// Take in the article ID and the rating
         /// If the rating does not exist, add it
         /// Save the update
         /// </summary>
-        /// <param name="productId"></param>
+        /// <param name="articleId"></param>
         /// <param name="rating"></param>
-        public bool AddRating(string productId, int rating)
+        public bool AddRating(string articleId, int rating)
         {
-            // If the ProductID is invalid, return
-            if (string.IsNullOrEmpty(productId))
+            // If the ArticleID is invalid, return
+            if (string.IsNullOrEmpty(articleId))
             {
                 return false;
             }
 
-            var products = GetAllData();
+            var articles = GetAllData();
 
-            // Look up the product, if it does not exist, return
-            var data = products.FirstOrDefault(x => x.Id.Equals(productId));
+            // Look up the article, if it does not exist, return
+            var data = articles.FirstOrDefault(x => x.Id.Equals(articleId));
             if (data == null)
             {
                 return false;
@@ -85,7 +85,7 @@ namespace ContosoCrafts.WebSite.Services
             data.Ratings = ratings.ToArray();
 
             // Save the data back to the data store
-            SaveData(products);
+            SaveData(articles);
 
             return true;
         }
@@ -98,33 +98,34 @@ namespace ContosoCrafts.WebSite.Services
         /// <param name="data"></param>
         public ArticleModel UpdateData(ArticleModel data)
         {
-            var products = GetAllData();
-            var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
-            if (productData == null)
+            var articles = GetAllData();
+            var articleData = articles.FirstOrDefault(x => x.Id.Equals(data.Id));
+            if (articleData == null)
             {
                 return null;
             }
 
             // Update the data to the new passed in values
-            productData.Title = data.Title;
-            productData.Description = data.Description.Trim();
-            productData.Url = data.Url;
-            productData.Image = data.Image;
+            articleData.Title = data.Title;
+            articleData.Author = data.Author;
+            articleData.Description = data.Description.Trim();
+            articleData.Url = data.Url;
+            articleData.Image = data.Image;
 
-            productData.Quantity = data.Quantity;
-            productData.Price = data.Price;
+            articleData.PublishDate = data.PublishDate;
+            articleData.Price = data.Price;
 
-            productData.CommentList = data.CommentList;
+            articleData.CommentList = data.CommentList;
 
-            SaveData(products);
+            SaveData(articles);
 
-            return productData;
+            return articleData;
         }
 
         /// <summary>
-        /// Save All products data to storage
+        /// Save All articles data to storage
         /// </summary>
-        private void SaveData(IEnumerable<ArticleModel> products)
+        private void SaveData(IEnumerable<ArticleModel> articles)
         {
 
             using (var outputStream = File.Create(JsonFileName))
@@ -135,13 +136,13 @@ namespace ContosoCrafts.WebSite.Services
                         SkipValidation = true,
                         Indented = true
                     }),
-                    products
+                    articles
                 );
             }
         }
 
         /// <summary>
-        /// Create a new product using default values
+        /// Create a new article using default values
         /// After create the user can update to set values
         /// </summary>
         /// <returns></returns>
