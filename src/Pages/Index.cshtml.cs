@@ -21,11 +21,11 @@ namespace ContosoCrafts.WebSite.Pages
         }
 
         public JsonFileArticleService ProductService { get; }
-        public IEnumerable<ProductModel> Products { get; private set; }
+        public IEnumerable<ArticleModel> Articles { get; private set; }
   
         public void OnGet()
         {
-            Products = ProductService.GetAllData();
+            Articles = ProductService.GetAllData();
         }  
     }
 }
