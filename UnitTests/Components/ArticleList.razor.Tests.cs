@@ -25,10 +25,10 @@ namespace UnitTests.Components
         public void ProductList_Default_Should_Return_Content()
         {
             // Arrange
-            Services.AddSingleton<JsonFileArticleService>(TestHelper.ProductService);
+            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
 
             // Act
-            var page = RenderComponent<ProductList>();
+            var page = RenderComponent<ArticleList>();
 
             // Get the Cards retrned
             var result = page.Markup;
