@@ -9,32 +9,32 @@ namespace ContosoCrafts.WebSite.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductsController : ControllerBase
+    public class ArticlesController : ControllerBase
     {
-        public ProductsController(JsonFileArticleService productService)
+        public ArticlesController(JsonFileArticleService articleService)
         {
-            ProductService = productService;
+            ArticleService = articleService;
         }
 
-        public JsonFileArticleService ProductService { get; }
+        public JsonFileArticleService ArticleService { get; }
 
         [HttpGet]
-        public IEnumerable<ProductModel> Get() 
+        public IEnumerable<ArticleModel> Get() 
         {
-            return ProductService.GetAllData();
+            return ArticleService.GetAllData();
         }
 
         [HttpPatch]
         public ActionResult Patch([FromBody] RatingRequest request)
         {
-            ProductService.AddRating(request.ProductId, request.Rating);
+            ArticleService.AddRating(request.ArticleId, request.Rating);
             
             return Ok();
         }
 
         public class RatingRequest
         {
-            public string ProductId { get; set; }
+            public string ArticleId { get; set; }
             public int Rating { get; set; }
         }
     }
