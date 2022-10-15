@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_to_test:
     runs-on: windows-latest
 
     steps:
@@ -27,7 +27,11 @@ jobs:
       
       - name: Build
         run: dotnet build --no-restore
-
+  
+  test:
+    runs-on: windows-latest
+    needs: build_to_test
+    steps:
       - name: Test with dotnet
         run: dotnet test --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
       
@@ -38,7 +42,11 @@ jobs:
           path: TestResults-${{ matrix.dotnet-version }}
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
-          
+        
+  build_to_release:
+    runs-on: windows-latest
+    needs: test
+    steps:
       - name: Build with dotnet
         run: dotnet build --configuration Release
       
@@ -53,7 +61,7 @@ jobs:
 
   deploy:
     runs-on: windows-latest
-    needs: build
+    needs: [test, build_to_release]
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
