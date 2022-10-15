@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ContosoCrafts.WebSite.Models
 {
-    public class ProductModel
+    public class ArticleModel
     {
         public string Id { get; set; }
         public string Maker { get; set; }
@@ -22,7 +22,7 @@ namespace ContosoCrafts.WebSite.Models
 
         public int[] Ratings { get; set; }
 
-        public ProductTypeEnum ProductType { get; set; } = ProductTypeEnum.Undefined;
+        public ArticleTypeEnum ProductType { get; set; } = ArticleTypeEnum.Undefined;
 
         public string Quantity { get; set; }
 
@@ -32,8 +32,6 @@ namespace ContosoCrafts.WebSite.Models
         // Store the Comments entered by the users on this product
         public List<CommentModel> CommentList { get; set; } = new List<CommentModel>();
 
-        public override string ToString() => JsonSerializer.Serialize<ProductModel>(this);
-
-
+        public override string ToString() => JsonSerializer.Serialize<ArticleModel>(this);
     }
 }
