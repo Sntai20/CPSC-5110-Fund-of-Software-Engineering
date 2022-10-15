@@ -20,7 +20,7 @@ namespace ContosoCrafts.WebSite.Services
 
         private string JsonFileName
         {
-            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "articles.json"); }
         }
 
         public IEnumerable<ProductModel> GetAllData()
