@@ -1,21 +1,21 @@
 @using ContosoCrafts.WebSite.Models
 @using ContosoCrafts.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
-@inject JsonFileArticleService ProductService
+@inject JsonFileArticleService ArticleService
 
 <div class="card-columns">
-    @foreach (var product in ProductService.GetAllData())
+    @foreach (var article in ArticleService.GetAllData())
     {
         <div class="card">
-            <div class="card-img" style="background-image: url('@product.Image');">
+            <div class="card-img" style="background-image: url('@article.Image');">
             </div>
             <div class="card-body">
-                <h5 class="card-title">@product.Title</h5>
+                <h5 class="card-title">@article.Title</h5>
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                    <button @onclick="(e => SelectProduct(product.Id))"
-                        data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                    <button @onclick="(e => SelectArticle(article.Id))"
+                        data-toggle="modal" data-target="#articleModal" class="btn btn-primary">
                         More Info
                     </button>
                 </small>
@@ -24,23 +24,23 @@
     }
 </div>
 
-@if (selectedProduct != null)
+@if (selectedArticle != null)
 {
-    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
+    <div class="modal fade" id="articleModal" tabindex="-1" role="dialog" aria-labelledby="articleTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="productTitle">@selectedProduct.Title</h5>
+                    <h5 class="modal-title" id="articleTitle">@selectedArticle.Title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="card">
-                        <div class="card-img" style="background-image: url('@selectedProduct.Image');">
+                        <div class="card-img" style="background-image: url('@selectedArticle.Image');">
                         </div>
                         <div class="card-body">
-                            <p class="card-text">@selectedProduct.Description</p>
+                            <p class="card-text">@selectedArticle.Description</p>
                         </div>
                     </div>
                 </div>
@@ -75,13 +75,13 @@
 
 @code
 {
-    ProductModel selectedProduct;
-    string selectedProductId;
+    ArticleModel selectedArticle;
+    string selectedArticleId;
 
-    void SelectProduct(string productId)
+    void SelectArticle(string articleId)
     {
-        selectedProductId = productId;
-        selectedProduct = ProductService.GetAllData().First(x => x.Id == productId);
+        selectedArticleId = articleId;
+        selectedArticle = ArticleService.GetAllData().First(x => x.Id == articleId);
         GetCurrentRating();
     }
 
@@ -91,25 +91,25 @@
 
     void GetCurrentRating()
     {
-        if (selectedProduct.Ratings == null)
+        if (selectedArticle.Ratings == null)
         {
             currentRating = 0;
             voteCount = 0;
         }
         else
         {
-            voteCount = selectedProduct.Ratings.Count();
+            voteCount = selectedArticle.Ratings.Count();
             voteLabel = voteCount > 1 ? "Votes" : "Vote";
-            currentRating = selectedProduct.Ratings.Sum() / voteCount;
+            currentRating = selectedArticle.Ratings.Sum() / voteCount;
         }
 
-        System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
+        System.Console.WriteLine($"Current rating for {selectedArticle.Id}: {currentRating}");
     }
 
     void SubmitRating(int rating)
     {
-        System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
-        ProductService.AddRating(selectedProductId, rating);
-        SelectProduct(selectedProductId);
+        System.Console.WriteLine($"Rating received for {selectedArticle.Id}: {rating}");
+        ArticleService.AddRating(selectedArticleId, rating);
+        SelectArticle(selectedArticleId);
     }
 }
