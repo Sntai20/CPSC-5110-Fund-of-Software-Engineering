@@ -19,7 +19,7 @@ namespace ContosoCrafts.WebSite.Controllers
         public JsonFileProductService ProductService { get; }
 
         [HttpGet]
-        public IEnumerable<ProductModel> Get()
+        public IEnumerable<ProductModel> Get() 
         {
             return ProductService.GetAllData();
         }
