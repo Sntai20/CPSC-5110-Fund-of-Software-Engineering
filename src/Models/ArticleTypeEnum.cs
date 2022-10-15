@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ContosoCrafts.WebSite.Models
 {
-    public enum ProductTypeEnum
+    public enum ArticleTypeEnum
     {
         Undefined = 0,
         Amature = 1,
@@ -14,16 +14,16 @@ namespace ContosoCrafts.WebSite.Models
         Commercial = 55,
     }
 
-    public static class ProductTypeEnumExtensions
+    public static class ArticleTypeEnumExtensions
     {
-        public static string DisplayName(this ProductTypeEnum data)
+        public static string DisplayName(this ArticleTypeEnum data)
         {
             return data switch
             {
-                ProductTypeEnum.Amature => "Hand Made Items",
-                ProductTypeEnum.Antique => "Antiques",
-                ProductTypeEnum.Collectable => "Collectables",
-                ProductTypeEnum.Commercial => "Commercial goods",
+                ArticleTypeEnum.Amature => "Hand Made Items",
+                ArticleTypeEnum.Antique => "Antiques",
+                ArticleTypeEnum.Collectable => "Collectables",
+                ArticleTypeEnum.Commercial => "Commercial goods",
  
                 // Default, Unknown
                 _ => "",
