@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Pages.Product
+namespace ContosoCrafts.WebSite.Pages.Article
 {
     /// <summary>
     /// Index Page will return all the data to show the user
@@ -16,17 +16,17 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <summary>
         /// Default Constructor
         /// </summary>
-        /// <param name="productService"></param>
-        public IndexModel(JsonFileArticleService productService)
+        /// <param name="articleService"></param>
+        public IndexModel(JsonFileArticleService articleService)
         {
-            ProductService = productService;
+            ArticleService = articleService;
         }
 
         // Data Service
-        public JsonFileArticleService ProductService { get; }
+        public JsonFileArticleService ArticleService { get; }
 
         // Collection of the Data
-        public IEnumerable<ProductModel> Products { get; private set; }
+        public IEnumerable<ArticleModel> Articles { get; private set; }
 
         /// <summary>
         /// REST OnGet
@@ -34,7 +34,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// </summary>
         public void OnGet()
         {
-            Products = ProductService.GetAllData();
+            Articles = ArticleService.GetAllData();
         }
     }
 }
