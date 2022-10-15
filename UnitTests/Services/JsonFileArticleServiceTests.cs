@@ -6,9 +6,9 @@ using NUnit.Framework;
 
 using ContosoCrafts.WebSite.Models;
 
-namespace UnitTests.Pages.Product.AddRating
+namespace UnitTests.Pages.Article.AddRating
 {
-    public class JsonFileProductServiceTests
+    public class JsonFileArticleServiceTests
     {
         #region TestSetup
 
@@ -21,12 +21,12 @@ namespace UnitTests.Pages.Product.AddRating
 
         #region AddRating
         [Test]
-        public void AddRating_InValid_Product_Null_Should_Return_False()
+        public void AddRating_InValid_Article_Null_Should_Return_False()
         {
             // Arrange
 
             // Act
-            var result = TestHelper.ProductService.AddRating(null, 1);
+            var result = TestHelper.ArticleService.AddRating(null, 1);
 
             // Assert
             Assert.AreEqual(false, result);
@@ -47,17 +47,17 @@ namespace UnitTests.Pages.Product.AddRating
         // ....
 
         [Test]
-        public void AddRating_Valid_Product_Valid_Rating_Valid_Should_Return_True()
+        public void AddRating_Valid_Article_Valid_Rating_Valid_Should_Return_True()
         {
             // Arrange
 
             // Get the First data item
-            var data = TestHelper.ProductService.GetAllData().First();
+            var data = TestHelper.ArticleService.GetAllData().First();
             var countOriginal = data.Ratings.Length;
 
             // Act
-            var result = TestHelper.ProductService.AddRating(data.Id, 5);
-            var dataNewList = TestHelper.ProductService.GetAllData().First();
+            var result = TestHelper.ArticleService.AddRating(data.Id, 5);
+            var dataNewList = TestHelper.ArticleService.GetAllData().First();
 
             // Assert
             Assert.AreEqual(true, result);
