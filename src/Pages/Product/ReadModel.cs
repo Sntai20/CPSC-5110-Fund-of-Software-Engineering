@@ -1,8 +1,9 @@
-﻿using ContosoCrafts.WebSite.Services;
+﻿using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
 
-namespace ContosoCrafts.WebSite.Models
+namespace ContosoCrafts.WebSite.Pages.Product
 {
     public class ReadModel : PageModel
     {
