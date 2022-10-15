@@ -3,26 +3,26 @@ using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
 
-namespace ContosoCrafts.WebSite.Pages.Product
+namespace ContosoCrafts.WebSite.Pages.Article
 {
     public class ReadModel : PageModel
     {
         // Data Middletier
-        public JsonFileArticleService ProductService { get; }
+        public JsonFileArticleService ArticleService { get; }
 
         // Default Constructor
-        public ReadModel(JsonFileArticleService productService)
+        public ReadModel(JsonFileArticleService articleService)
         {
-            ProductService = productService;
+            ArticleService = articleService;
         }
 
         // Data to show
-        public ProductModel Product;
+        public ArticleModel Article;
 
         // REST Get Request
         public void OnGet(string id)
         {
-            Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
+            Article = ArticleService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
     }
 }
