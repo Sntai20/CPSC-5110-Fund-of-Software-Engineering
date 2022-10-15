@@ -14,10 +14,10 @@ using Moq;
 
 using NUnit.Framework;
 
-using ContosoCrafts.WebSite.Pages.Product;
+using ContosoCrafts.WebSite.Pages.Article;
 using ContosoCrafts.WebSite.Services;
 
-namespace UnitTests.Pages.Product.Index
+namespace UnitTests.Pages.Article.Index
 {
     public class IndexTests
     {
@@ -61,11 +61,11 @@ namespace UnitTests.Pages.Product.Index
             mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
             var MockLoggerDirect = Mock.Of<ILogger<IndexModel>>();
-            JsonFileArticleService productService;
+            JsonFileArticleService articleService;
 
-            productService = new JsonFileArticleService(mockWebHostEnvironment.Object);
+            articleService = new JsonFileArticleService(mockWebHostEnvironment.Object);
 
-            pageModel = new IndexModel(productService)
+            pageModel = new IndexModel(articleService)
             {
             };
         }
@@ -74,7 +74,7 @@ namespace UnitTests.Pages.Product.Index
 
         #region OnGet
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void OnGet_Valid_Should_Return_Articles()
         {
             // Arrange
 
@@ -83,7 +83,7 @@ namespace UnitTests.Pages.Product.Index
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(15, pageModel.Products.ToList().Count);
+            Assert.AreEqual(15, pageModel.Articles.ToList().Count);
         }
         #endregion OnGet
     }
