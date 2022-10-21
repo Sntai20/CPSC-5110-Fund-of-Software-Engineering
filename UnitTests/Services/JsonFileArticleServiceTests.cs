@@ -98,7 +98,7 @@ namespace UnitTests.Pages.Article.AddRating
         }
 
         [Test]
-        public void AddRating_Valid_Article_Valid_Rating_Valid_Should_Return_True()
+        public void AddRating_Valid_Article_Rating_5_Should_Return_True()
         {
             // Arrange
 
