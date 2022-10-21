@@ -33,18 +33,18 @@ namespace UnitTests.Pages.Article.AddRating
         }
 
         [Test]
-        public void AddRating_InValid_()
+        public void AddRating_InValid_Product_Empty_Should_Return_False()
         {
             // Arrange
 
             // Act
-            //var result = TestHelper.ArticleService.AddRating(null, 1);
+            var result = TestHelper.ArticleService.AddRating("", 1);
 
             // Assert
-            //Assert.AreEqual(false, result);
+            Assert.AreEqual(false, result);
         }
 
-        // ....
+
 
         [Test]
         public void AddRating_Valid_Article_Valid_Rating_Valid_Should_Return_True()
