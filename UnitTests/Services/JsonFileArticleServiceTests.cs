@@ -70,6 +70,19 @@ namespace UnitTests.Pages.Article.AddRating
         }
 
         [Test]
+        public void AddRating_InValid_Too_High_Rating_Should_Return_False()
+        {
+            // Arrange
+            var productID = TestHelper.ArticleService.GetAllData().First().Id;
+
+            // Act
+            var result = TestHelper.ArticleService.AddRating(productID, 6);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
         public void AddRating_Valid_Article_Valid_Rating_Valid_Should_Return_True()
         {
             // Arrange
