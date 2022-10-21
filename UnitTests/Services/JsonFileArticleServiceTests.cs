@@ -4,6 +4,10 @@ using NUnit.Framework;
 using ContosoCrafts.WebSite.Models;
 using System.Text.Json;
 using Bunit.Extensions;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using System;
 
 namespace UnitTests.Pages.Article
 {
@@ -20,7 +24,7 @@ namespace UnitTests.Pages.Article
         #region GetAllData
 
         [Test]
-        public void GetAllData_Valid_Does_Not_Return_Null_Or_Empty()
+        public void GetAllData_Invalid_Does_Not_Return_Null_Or_Empty_Should_Return_False()
         {
             // Arrange
             
@@ -30,6 +34,28 @@ namespace UnitTests.Pages.Article
             // Assert
             Assert.AreEqual(false, result.IsNullOrEmpty());
         }
+
+        [Test]
+        public void GetAllData_Valid_Returns_Contents_Of_Json_File_Should_Return_True()
+        {
+            // Arrange
+
+            // read JSON file directly and convert to a string for comparison
+            var jsonFileReader = File.OpenText("C:\\repos\\5110 Group Project\\src\\wwwroot\\data\\articles.json");
+
+            IEnumerable<ArticleModel> expected = JsonSerializer.Deserialize<ArticleModel[]>(jsonFileReader.ReadToEnd(),
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+            // Act
+            IEnumerable<ArticleModel> result = TestHelper.ArticleService.GetAllData();
+            
+            // Assert
+            Assert.AreEqual(expected.ToString(), result.ToString());
+        }
+
         #endregion GetAllData
 
 
