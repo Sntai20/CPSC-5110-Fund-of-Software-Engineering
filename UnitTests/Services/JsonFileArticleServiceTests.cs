@@ -1,12 +1,11 @@
 using System.Linq;
-
 using Microsoft.AspNetCore.Mvc;
-
 using NUnit.Framework;
-
 using ContosoCrafts.WebSite.Models;
+using System.Text.Json;
+using Bunit.Extensions;
 
-namespace UnitTests.Pages.Article.AddRating
+namespace UnitTests.Pages.Article
 {
     public class JsonFileArticleServiceTests
     {
@@ -18,6 +17,21 @@ namespace UnitTests.Pages.Article.AddRating
         }
 
         #endregion TestSetup
+        #region GetAllData
+
+        [Test]
+        public void GetAllData_Valid_Does_Not_Return_Null_Or_Empty()
+        {
+            // Arrange
+            
+            // Act
+            var result = TestHelper.ArticleService.GetAllData();
+
+            // Assert
+            Assert.AreEqual(false, result.IsNullOrEmpty());
+        }
+        #endregion GetAllData
+
 
         #region AddRating
         [Test]
