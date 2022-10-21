@@ -83,6 +83,21 @@ namespace UnitTests.Pages.Article.AddRating
         }
 
         [Test]
+        public void AddRating_Valid_Create_Data_Ratings_Array_Should_Return_True()
+        {
+            // Arrange
+            // create a ProductModel with no ratings
+            var data = TestHelper.ArticleService.CreateData();
+
+            // Act
+            var result = TestHelper.ArticleService.AddRating(data.Id, 4);
+
+            // Assert
+            Assert.AreEqual(true, result);
+
+        }
+
+        [Test]
         public void AddRating_Valid_Article_Valid_Rating_Valid_Should_Return_True()
         {
             // Arrange
