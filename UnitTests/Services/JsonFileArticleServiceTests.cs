@@ -44,7 +44,17 @@ namespace UnitTests.Pages.Article.AddRating
             Assert.AreEqual(false, result);
         }
 
+        [Test]
+        public void AddRating_InValid_Data_Null_Should_Return_False()
+        {
+            // Arrange
 
+            // Act
+            var result = TestHelper.ArticleService.AddRating("Does not exist", 1);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
         [Test]
         public void AddRating_Valid_Article_Valid_Rating_Valid_Should_Return_True()
