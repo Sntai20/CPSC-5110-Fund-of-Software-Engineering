@@ -42,7 +42,7 @@ namespace UnitTests.Pages.Article
             // Arrange
 
             // read JSON file directly and convert to a string for comparison
-            var jsonFileReader = File.OpenText("C:\\repos\\5110 Group Project\\src\\wwwroot\\data\\articles.json");
+            var jsonFileReader = File.OpenText("..\\..\\..\\..\\src\\wwwroot\\data\\articles.json");
 
             IEnumerable<ArticleModel> expected = JsonSerializer.Deserialize<ArticleModel[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
