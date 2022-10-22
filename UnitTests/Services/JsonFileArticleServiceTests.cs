@@ -21,6 +21,7 @@ namespace UnitTests.Pages.Article
         }
 
         #endregion TestSetup
+        
         #region GetAllData
 
         [Test]
@@ -57,7 +58,6 @@ namespace UnitTests.Pages.Article
         }
 
         #endregion GetAllData
-
 
         #region AddRating
         [Test]
@@ -156,6 +156,26 @@ namespace UnitTests.Pages.Article
             Assert.AreEqual(5, dataNewList.Ratings.Last());
         }
         #endregion AddRating
+
+        #region CreateData
+
+        [Test]
+        public void CreateData_Valid_Last_Value_Matches_Created_Values_Should_Return_True()
+        {
+            // Arrange
+
+            // Act
+            var result = TestHelper.ArticleService.CreateData();
+            var last = TestHelper.ArticleService.GetAllData().Last();
+
+            // Assert
+            Assert.AreEqual("Enter Title", result.Title);
+            Assert.AreEqual("Enter Description", result.Description);
+            Assert.AreEqual("Enter URL", result.Url);
+            Assert.AreEqual("", result.Image);
+            Assert.AreEqual(result.Id, last.Id);
+        }
+        #endregion CreateData
 
     }
 }
