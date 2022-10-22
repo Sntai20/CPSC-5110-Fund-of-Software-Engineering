@@ -10,15 +10,15 @@
 <h1>Read</h1>
 
 <div class="content">
-    <h5 class="title" id="productTitle">@Model.Product.Title</h5>
-    <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
-    <p class="card-text">@Model.Product.Description</p>
+    <h5 class="title" id="productTitle">@Model.Article.Title</h5>
+    <img class="card-img" src='@Model.Article.Image' alt='Image for @Model.Article.Title'>
+    <p class="card-text">@Model.Article.Description</p>
 </div>
 
 <br />
 <br />
 
 <div class="row">
-    <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-primary">Update</a> &nbsp; &nbsp;
-    <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
+    <a asp-page="Update" asp-route-id="@Model.Article.Id" class="btn btn-primary">Update</a> &nbsp; &nbsp;
+    <a asp-page="Delete" asp-route-id="@Model.Article.Id" class="btn btn-danger">Delete</a>
 </div>

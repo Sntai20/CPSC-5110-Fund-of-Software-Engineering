@@ -10,20 +10,20 @@ namespace ContosoCrafts.WebSite.Pages.Article
     public class ReadModel : PageModel
     {
         // Data middletier
-        public JsonFileArticleService ProductService { get; }
+        public JsonFileArticleService ArticleService { get; }
 
         /// <summary>
         /// Defualt Construtor
         /// </summary>
         /// <param name="logger"></param>
-        /// <param name="productService"></param>
-        public ReadModel(JsonFileArticleService productService)
+        /// <param name="articleService"></param>
+        public ReadModel(JsonFileArticleService articleService)
         {
-            ProductService = productService;
+            ArticleService = articleService;
         }
 
         // The data to show
-        public ArticleModel Product;
+        public ArticleModel Article;
 
         /// <summary>
         /// REST Get request
@@ -31,7 +31,7 @@ namespace ContosoCrafts.WebSite.Pages.Article
         /// <param name="id"></param>
         public void OnGet(string id)
         {
-            Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
+            Article = ArticleService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
     }
 }
