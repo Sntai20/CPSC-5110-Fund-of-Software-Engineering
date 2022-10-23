@@ -8,10 +8,11 @@ namespace ContosoCrafts.WebSite.Models
     public enum ArticleTypeEnum
     {
         Undefined = 0,
-        Amature = 1,
-        Antique = 5,
-        Collectable = 130,
-        Commercial = 55,
+        Travel = 1,
+        Books = 5,
+        News = 130,
+        Music = 55,
+        Food = 63,
     }
 
     public static class ArticleTypeEnumExtensions
@@ -20,10 +21,11 @@ namespace ContosoCrafts.WebSite.Models
         {
             return data switch
             {
-                ArticleTypeEnum.Amature => "Hand Made Items",
-                ArticleTypeEnum.Antique => "Antiques",
-                ArticleTypeEnum.Collectable => "Collectables",
-                ArticleTypeEnum.Commercial => "Commercial goods",
+                ArticleTypeEnum.Travel => "Hand Made Items",
+                ArticleTypeEnum.Books => "Books",
+                ArticleTypeEnum.News => "News",
+                ArticleTypeEnum.Music => "Music",
+                ArticleTypeEnum.Food => "Food",
  
                 // Default, Unknown
                 _ => "",
