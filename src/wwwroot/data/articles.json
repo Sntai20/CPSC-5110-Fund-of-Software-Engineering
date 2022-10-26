@@ -33,13 +33,13 @@
     "CommentList": []
   },
   {
-    "Id": "jenlooper-lightshow",
-    "Author": "@jenlooper",
+    "Id": "kate-lightshow",
+    "Author": "Cookie and Kate",
     "PublishDate": null,
-    "img": "https://user-images.githubusercontent.com/41929050/61567053-13938600-aa33-11e9-9780-104fe4019659.png",
-    "Url": "https://www.hackster.io/agent-hawking-1/bling-your-laptop-with-an-internet-connected-light-show-30e4db",
-    "Title": "Bling your Laptop with an Internet-Connected Light Show",
-    "Description": "Create a web-connected light-strip API controllable from your website, using the Particle.io.",
+    "img": "https://cookieandkate.com/images/2016/01/homemade-apple-muffins-1-1-550x757.jpg",
+    "Url": "https://cookieandkate.com/healthy-apple-muffins-recipe/",
+    "Title": "Healthy Apple Muffins",
+    "Description": "It’s apple muffin time! You all really seem to love my banana muffins, pumpkin muffins and carrot muffins and the blueberry muffins in my cookbook. Today, apple muffins are joining the club.",
     "Ratings": null,
     "ArticleType": 55,
     "Price": 0,
@@ -100,13 +100,13 @@
     "CommentList": []
   },
   {
-    "Id": "sailorhg-led",
-    "Author": "sailorhg",
+    "Id": "Elizabeth-led",
+    "Author": "Elizabeth Waddington",
     "PublishDate": null,
-    "img": "https://user-images.githubusercontent.com/41929050/61567052-13938600-aa33-11e9-9a88-cd842073ba44.jpg",
-    "Url": "https://twitter.com/sailorhg/status/1090117277540745216",
-    "Title": "Heart-shaped LED",
-    "Description": "custom molded heart shaped LED with sprinkles.",
+    "img": "https://www.treehugger.com/thmb/uwLiSsRJ8JY2bprw3KRW3gxjZCw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/womantrimsplantsinfall-4607d740c9af46cc9d7c07ad6e653338.jpg",
+    "Url": "https://www.treehugger.com/what-love-fall-garden-6751986",
+    "Title": "What I Love About a Fall Garden",
+    "Description": "It fosters contemplation and respect for the earth's seasonal cycles.",
     "Ratings": null,
     "ArticleType": 1,
     "Price": 0,
@@ -165,13 +165,13 @@
     "CommentList": []
   },
   {
-    "Id": "vogueandcode-ruby-sis-2",
-    "Author": "vogueandcode",
+    "Id": "strewe-ruby-sis-2",
+    "Author": "Oliver Strewe",
     "PublishDate": null,
-    "img": "https://user-images.githubusercontent.com/41929050/61567063-14c4b300-aa33-11e9-8515-bcb866da9ea3.png",
-    "Url": "https://www.vogueandcode.com/shop/ruby-sis-2",
-    "Title": "Ruby Sis",
-    "Description": "Styled in a dashiki, Ruby Sis is listening to music while coding in her favorite language, Ruby!",
+    "img": "https://www.treehugger.com/thmb/5uJzNDaugnIKRTGmH8aodr2yoAk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-148694857-e81e0d720758417baf467c05282f6692.jpg",
+    "Url": "https://www.treehugger.com/bizarre-examples-of-genetic-engineering-4869360",
+    "Title": "12 Bizarre Examples of Genetic Engineering",
+    "Description": "Here’s a look at the some genetically engineered plants and animals.",
     "Ratings": null,
     "ArticleType": 0,
     "Price": 0,
@@ -203,4 +203,5 @@
     "Price": 0,
     "CommentList": []
   }
+  
 ]
