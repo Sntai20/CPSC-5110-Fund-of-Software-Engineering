@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Pages.Product
+namespace ContosoCrafts.WebSite.Pages.Article
 {
     /// <summary>
     /// Create Page
