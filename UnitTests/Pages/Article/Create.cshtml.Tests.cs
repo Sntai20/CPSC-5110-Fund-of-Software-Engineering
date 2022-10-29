@@ -17,7 +17,7 @@ using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages.Article;
 using ContosoCrafts.WebSite.Services;
 
-namespace UnitTests.Pages.Article.Index
+namespace UnitTests.Pages.Article.Create
 {
     public class CreateTests
     {
@@ -31,7 +31,6 @@ namespace UnitTests.Pages.Article.Index
         public static ViewDataDictionary viewData;
         public static TempDataDictionary tempData;
         public static PageContext pageContext;
-
         public static CreateModel pageModel;
 
         [SetUp]
@@ -60,7 +59,7 @@ namespace UnitTests.Pages.Article.Index
             mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net6.0/wwwroot");
             mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
-            var MockLoggerDirect = Mock.Of<ILogger<IndexModel>>();
+            var MockLoggerDirect = Mock.Of<ILogger<CreateModel>>();
             JsonFileArticleService articleService;
 
             articleService = new JsonFileArticleService(mockWebHostEnvironment.Object);
@@ -70,5 +69,23 @@ namespace UnitTests.Pages.Article.Index
             };
         }
         #endregion TestSetup
+
+        #region OnGet
+        [Test]
+        public void OnGet_Valid_Should_Return_True()
+        {
+            // Arrange
+
+
+            // Act
+            pageModel.OnGet();
+
+            // Reset
+
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+        }
+        #endregion OnGet
     }
 }
