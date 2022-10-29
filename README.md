@@ -9,7 +9,7 @@ There are two projects and on solution that is self-contained. You can analyze t
 ## Clone this repository
 
 ```git
-    git clone https://github.com/Sntai20/CPSC-5110-Fund-of-Software-Engineering.git
+git clone https://github.com/Sntai20/CPSC-5110-Fund-of-Software-Engineering.git
 ```
 
 ## Running the code from the command line
