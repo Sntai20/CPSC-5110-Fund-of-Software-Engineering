@@ -176,5 +176,29 @@ namespace UnitTests.Pages.Article
         }
         #endregion CreateData
 
+        #region UpdateData
+        [Test]
+        public void UpdateData_Valid_Updated_Value_Matches_Should_Return_True()
+        {
+            // Arrange
+            var data = TestHelper.ArticleService.GetAllData().FirstOrDefault();
+            var data2 = data;
+            data2.Title = "Test";
+
+            // Act
+            var result = TestHelper.ArticleService.UpdateData(data2);
+
+            // Reset
+            data = TestHelper.ArticleService.UpdateData(data);
+
+            // Assert
+            Assert.AreEqual(data2.Title, result.Title);
+        }
+
+
+
+        #endregion UpdateData
+
+
     }
 }
