@@ -7,14 +7,7 @@
     "Url": "https://www.hackster.io/agent-hawking-1/the-quantified-cactus-an-easy-plant-soil-moisture-sensor-e65393",
     "Title": "Crater Lake in Winter",
     "Description": "Most days in November through May, opportunities are abundant for winter recreation or simply playing in the snow at Crater Lake National Park.",
-    "Ratings": [
-      5,
-      5,
-      3,
-      2,
-      1,
-      5
-    ],
+    "Ratings": null,
     "ArticleType": 55,
     "Price": 0,
     "CommentList": []
@@ -129,10 +122,10 @@
     "Id": "selinazawacki-soi-pins",
     "Author": "selinazawacki",
     "PublishDate": null,
-    "img": "https://www.cnet.com/a/img/resize/3580b336aae48a5a84bb6d801099b7d842715990/hub/2018/08/01/bde306b1-b431-45a4-820d-f63fc0aad868/001-2018-ford-mustang-gt-review.jpg?auto=webp&width=1200",
+    "img": "https://www.cnet.com/a/img/resize/3580b336aae48a5a84bb6d801099b7d842715990/hub/2018/08/01/bde306b1-b431-45a4-820d-f63fc0aad868/001-2018-ford-mustang-gt-review.jpg?auto=webp\u0026width=1200",
     "Url": "https://www.instagram.com/p/BNm6hZzDoEF/",
     "Title": "2024 Ford Mustang is way more than a simple refresh.",
-    "Description": "The S650 2024 Ford Mustang made its debut last month, ushering in the pony car’s seventh generation with major upgrades in looks, performance and technology.",
+    "Description": "The S650 2024 Ford Mustang made its debut last month, ushering in the pony car\u2019s seventh generation with major upgrades in looks, performance and technology.",
     "Ratings": null,
     "ArticleType": 1,
     "Price": 0,
@@ -185,9 +178,7 @@
     "Url": "https://visualstudiomagazine.com/articles/2022/07/20/math-combinations-using-csharp.aspx",
     "Title": "Lightweight Mathematical Combinations Using C#",
     "Description": "After previously discussing permutations, Dr. James McCaffrey of Microsoft Research uses step-by-step examples and full code presentations to explore combinations.",
-    "Ratings": [
-      4
-    ],
+    "Ratings": null,
     "ArticleType": 0,
     "Price": 0,
     "CommentList": []
