@@ -6,7 +6,7 @@ using Moq;
 
 using NUnit.Framework;
 
-using ContosoCrafts.WebSite.Pages.Article;
+using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages.Index
 {
@@ -21,7 +21,7 @@ namespace UnitTests.Pages.Index
         {
             var MockLoggerDirect = Mock.Of<ILogger<IndexModel>>();
 
-            pageModel = new IndexModel(TestHelper.ArticleService)
+            pageModel = new IndexModel(MockLoggerDirect, TestHelper.ArticleService)
             {
             };
         }
@@ -33,10 +33,11 @@ namespace UnitTests.Pages.Index
         public void OnGet_Valid_Should_Return_Articles()
         {
             // Arrange
+            var data = pageModel.Articles;
+            var data2 = pageModel.ArticleService;
 
             // Act
             pageModel.OnGet();
-            var result = pageModel.Articles;
 
 
             // Assert
