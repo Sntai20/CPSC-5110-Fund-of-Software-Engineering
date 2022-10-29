@@ -27,16 +27,37 @@ namespace UnitTests
     /// </summary>
     public static class TestHelper
     {
-        public static Mock<IWebHostEnvironment> MockWebHostEnvironment;
+        // URLHelperFactory defines the contract for the helper to build URLs fo ASP.NET MVC within an application
         public static IUrlHelperFactory UrlHelperFactory;
-        public static DefaultHttpContext HttpContextDefault;
+
+        // WebHostEnvironment proivdes infomration about he web hosting environment an application is running in.
         public static IWebHostEnvironment WebHostEnvironment;
+
+        // MockWebHostEnvironment simulates the web hosting environment
+        public static Mock<IWebHostEnvironment> MockWebHostEnvironment;
+
+        // HttpContextDefault represents an implemetation of the HTTP Context class.
+        public static DefaultHttpContext HttpContextDefault;
+
+        // ModelState represents the staet of an attempt ot bind a posted form to an action mehtod, which includes validation information
         public static ModelStateDictionary ModelState;
+
+        // ActionContext is a context object for execution of action which has been selected as apart of an HTTP request.
         public static ActionContext ActionContext;
+
+        // ModelMetdataProvider is a MicrosoftAspNetCor.Mvc.ModelBinding.Metdata.DefaultBindingMetadataProvider that represents an empty model.
         public static EmptyModelMetadataProvider ModelMetadataProvider;
+
+        // ViewData represents a container that is used to pass data between a controller and a view.
         public static ViewDataDictionary ViewData;
+
+        // TempData represents a set of data that persistes only from one request to the next.
         public static TempDataDictionary TempData;
+
+        // PageContext is the context associated with the currenet request for a Razor page.
         public static PageContext PageContext;
+
+        // ArticleService is an instance of the JsonFileArticleService class holding the details of the Json file "database"
         public static JsonFileArticleService ArticleService;
 
         /// <summary>

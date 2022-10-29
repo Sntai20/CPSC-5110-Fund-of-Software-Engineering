@@ -77,6 +77,7 @@ namespace UnitTests.Pages.Article.Index
         public void OnGet_Valid_Should_Return_Articles()
         {
             // Arrange
+            var data = pageModel.Articles;
 
             // Act
             pageModel.OnGet();

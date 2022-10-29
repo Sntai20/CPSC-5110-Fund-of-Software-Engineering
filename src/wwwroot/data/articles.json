@@ -7,7 +7,9 @@
     "Url": "https://www.hackster.io/agent-hawking-1/the-quantified-cactus-an-easy-plant-soil-moisture-sensor-e65393",
     "Title": "Crater Lake in Winter",
     "Description": "Most days in November through May, opportunities are abundant for winter recreation or simply playing in the snow at Crater Lake National Park.",
-    "Ratings": [ 5 ],
+    "Ratings": [
+      5
+    ],
     "ArticleType": 55,
     "Price": 0,
     "CommentList": []
@@ -191,6 +193,19 @@
     "Url": "https://www.instagram.com/p/BEXlpiZCnJ3",
     "Title": "Floppy Crop",
     "Description": "As the year progresses, so do the hottest styles. From designer showrooms and runways to street style fashion, there have been plenty of fresh looks to try this year.",
+    "Ratings": null,
+    "ArticleType": 0,
+    "Price": 0,
+    "CommentList": []
+  },
+  {
+    "Id": "0b2163df-cd91-4795-847e-306ae7e090b8",
+    "Author": null,
+    "PublishDate": null,
+    "img": "",
+    "Url": "Enter URL",
+    "Title": "Enter Title",
+    "Description": "Enter Description",
     "Ratings": null,
     "ArticleType": 0,
     "Price": 0,
