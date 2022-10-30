@@ -1,15 +1,15 @@
-using System.Diagnostics;
-
-using ContosoCrafts.WebSite.Pages;
-
-using Microsoft.Extensions.Logging;
-
-using Moq;
-
-using NUnit.Framework;
-
-namespace UnitTests.Pages.Error
+namespace UnitTests.Pages
 {
+    using System.Diagnostics;
+
+    using ContosoCrafts.WebSite.Pages;
+
+    using Microsoft.Extensions.Logging;
+
+    using Moq;
+
+    using NUnit.Framework;
+
     public class ErrorTests
     {
         #region TestSetup
@@ -35,8 +35,8 @@ namespace UnitTests.Pages.Error
         {
             // Arrange
 
-            Activity activity = new Activity("activity");
-            activity.Start();
+            var activity = new Activity("activity");
+            _ = activity.Start();
 
             // Act
             pageModel.OnGet();
