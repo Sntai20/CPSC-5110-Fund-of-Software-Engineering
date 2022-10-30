@@ -1,12 +1,9 @@
-using System.Linq;
+using ContosoCrafts.WebSite.Components;
+using ContosoCrafts.WebSite.Services;
 
 using Microsoft.Extensions.DependencyInjection;
 
-using Bunit;
 using NUnit.Framework;
-
-using ContosoCrafts.WebSite.Components;
-using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Components
 {
