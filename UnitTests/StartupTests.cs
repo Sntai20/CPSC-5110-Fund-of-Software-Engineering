@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-
-using NUnit.Framework;
-
-namespace UnitTests.Pages.Startup
+namespace UnitTests
 {
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
+
+    using NUnit.Framework;
+
     public class StartupTests
     {
         #region TestSetup

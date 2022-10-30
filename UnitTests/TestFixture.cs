@@ -1,9 +1,9 @@
-﻿using System.IO;
-
-using NUnit.Framework;
-
-namespace UnitTests
+﻿namespace UnitTests
 {
+    using System.IO;
+
+    using NUnit.Framework;
+
     [SetUpFixture]
     public class TestFixture
     {
@@ -35,13 +35,13 @@ namespace UnitTests
             }
 
             // Make the directory
-            Directory.CreateDirectory(DataUTPath);
+            _ = Directory.CreateDirectory(DataUTPath);
 
             // Copy over all data files
             var filePaths = Directory.GetFiles(DataWebPath);
             foreach (var filename in filePaths)
             {
-                string OriginalFilePathName = filename.ToString();
+                var OriginalFilePathName = filename.ToString();
                 var newFilePathName = OriginalFilePathName.Replace(DataWebPath, DataUTPath);
 
                 File.Copy(OriginalFilePathName, newFilePathName);

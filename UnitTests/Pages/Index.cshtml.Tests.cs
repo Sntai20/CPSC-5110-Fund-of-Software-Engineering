@@ -1,15 +1,15 @@
-using System.Linq;
-
-using ContosoCrafts.WebSite.Pages;
-
-using Microsoft.Extensions.Logging;
-
-using Moq;
-
-using NUnit.Framework;
-
-namespace UnitTests.Pages.Index
+namespace UnitTests.Pages
 {
+    using System.Linq;
+
+    using ContosoCrafts.WebSite.Pages;
+
+    using Microsoft.Extensions.Logging;
+
+    using Moq;
+
+    using NUnit.Framework;
+
     public class IndexTests
     {
         #region TestSetup
@@ -33,8 +33,8 @@ namespace UnitTests.Pages.Index
         public void OnGet_Valid_Should_Return_Articles()
         {
             // Arrange
-            var data = pageModel.Articles;
-            var data2 = pageModel.ArticleService;
+            _ = pageModel.Articles;
+            _ = pageModel.ArticleService;
 
             // Act
             pageModel.OnGet();

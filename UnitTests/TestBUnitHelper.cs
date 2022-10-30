@@ -1,9 +1,9 @@
-using Bunit;
-
-using NUnit.Framework;
-
 namespace UnitTests
 {
+    using Bunit;
+
+    using NUnit.Framework;
+
     /// <summary>
     /// Test Context used by bUnit
     /// </summary>
@@ -11,10 +11,16 @@ namespace UnitTests
     {
         // The Setup sets the context
         [SetUp]
-        public void Setup() => TestContext = new Bunit.TestContext();
+        public void Setup()
+        {
+            TestContext = new Bunit.TestContext();
+        }
 
         // When done displose removes it, to free up system resources
         [TearDown]
-        public void TearDown() => TestContext.Dispose();
+        public void TearDown()
+        {
+            TestContext.Dispose();
+        }
     }
 }

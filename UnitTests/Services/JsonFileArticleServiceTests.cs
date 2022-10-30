@@ -1,16 +1,16 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.Json;
-
-using Bunit.Extensions;
-
-using ContosoCrafts.WebSite.Models;
-
-using NUnit.Framework;
-
-namespace UnitTests.Pages.Article
+namespace UnitTests.Services
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text.Json;
+
+    using Bunit.Extensions;
+
+    using ContosoCrafts.WebSite.Models;
+
+    using NUnit.Framework;
+
     public class JsonFileArticleServiceTests
     {
         #region TestSetup
@@ -51,7 +51,7 @@ namespace UnitTests.Pages.Article
                     });
 
             // Act
-            IEnumerable<ArticleModel> result = TestHelper.ArticleService.GetAllData();
+            var result = TestHelper.ArticleService.GetAllData();
 
             // Assert
             Assert.AreEqual(expected.ToString(), result.ToString());
@@ -190,7 +190,7 @@ namespace UnitTests.Pages.Article
             var result = TestHelper.ArticleService.UpdateData(data2);
 
             // Reset
-            data = TestHelper.ArticleService.UpdateData(data);
+            _ = TestHelper.ArticleService.UpdateData(data);
 
             // Assert
             Assert.AreEqual(data2.Title, result.Title);

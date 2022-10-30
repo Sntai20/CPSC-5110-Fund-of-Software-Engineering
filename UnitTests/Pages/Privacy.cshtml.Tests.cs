@@ -1,13 +1,13 @@
-using ContosoCrafts.WebSite.Pages;
-
-using Microsoft.Extensions.Logging;
-
-using Moq;
-
-using NUnit.Framework;
-
-namespace UnitTests.Pages.Privacy
+namespace UnitTests.Pages
 {
+    using ContosoCrafts.WebSite.Pages;
+
+    using Microsoft.Extensions.Logging;
+
+    using Moq;
+
+    using NUnit.Framework;
+
     public class PrivacyTests
     {
         #region TestSetup
