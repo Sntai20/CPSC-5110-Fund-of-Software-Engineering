@@ -1,24 +1,24 @@
-﻿using System.Linq;
-
-using ContosoCrafts.WebSite.Pages.Article;
-using ContosoCrafts.WebSite.Services;
-
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.Logging;
-
-using Moq;
-
-using NUnit.Framework;
-
-namespace UnitTests.Pages.Article.Read
+﻿namespace UnitTests.Pages.Article
 {
+    using System.Linq;
+
+    using ContosoCrafts.WebSite.Pages.Article;
+    using ContosoCrafts.WebSite.Services;
+
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.ModelBinding;
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+    using Microsoft.AspNetCore.Mvc.Routing;
+    using Microsoft.AspNetCore.Mvc.ViewFeatures;
+    using Microsoft.AspNetCore.Routing;
+    using Microsoft.Extensions.Logging;
+
+    using Moq;
+
+    using NUnit.Framework;
+
     public class ReadTests
     {
         #region TestSetup
@@ -56,9 +56,9 @@ namespace UnitTests.Pages.Article.Read
             };
 
             var mockWebHostEnvironment = new Mock<IWebHostEnvironment>();
-            mockWebHostEnvironment.Setup(m => m.EnvironmentName).Returns("Hosting:UnitTestEnvironment");
-            mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net6.0/wwwroot");
-            mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
+            _ = mockWebHostEnvironment.Setup(m => m.EnvironmentName).Returns("Hosting:UnitTestEnvironment");
+            _ = mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net6.0/wwwroot");
+            _ = mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
             var MockLoggerDirect = Mock.Of<ILogger<IndexModel>>();
             JsonFileArticleService articleService;
