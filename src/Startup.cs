@@ -1,4 +1,4 @@
-namespace ContosoCrafts.WebSite
+﻿namespace ContosoCrafts.WebSite
 {
     using ContosoCrafts.WebSite.Services;
 
@@ -8,16 +8,29 @@ namespace ContosoCrafts.WebSite
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
 
+    /// <summary>
+    /// This class controls the startup behavior of the website.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Get method for Configuration property
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             _ = services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -27,7 +40,11 @@ namespace ContosoCrafts.WebSite
             _ = services.AddTransient<JsonFileArticleService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
