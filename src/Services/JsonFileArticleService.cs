@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace ContosoCrafts.WebSite.Services
 {
-   public class JsonFileArticleService
+    public class JsonFileArticleService
     {
         public JsonFileArticleService(IWebHostEnvironment webHostEnvironment)
         {
@@ -25,7 +25,7 @@ namespace ContosoCrafts.WebSite.Services
 
         public IEnumerable<ArticleModel> GetAllData()
         {
-            using(var jsonFileReader = File.OpenText(JsonFileName))
+            using (var jsonFileReader = File.OpenText(JsonFileName))
             {
                 return JsonSerializer.Deserialize<ArticleModel[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
@@ -74,7 +74,7 @@ namespace ContosoCrafts.WebSite.Services
             }
 
             // Check to see if the rating exist, if there are none, then create the array
-            if(data.Ratings == null)
+            if (data.Ratings == null)
             {
                 data.Ratings = new int[] { };
             }
@@ -177,11 +177,11 @@ namespace ContosoCrafts.WebSite.Services
             var data = dataSet.FirstOrDefault(m => m.Id.Equals(id));
 
             var newDataSet = GetAllData().Where(m => m.Id.Equals(id) == false);
-            
+
             SaveData(newDataSet);
 
             return data;
         }
-        
+
     }
 }
