@@ -1,12 +1,13 @@
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using NUnit.Framework;
-using ContosoCrafts.WebSite.Models;
-using System.Text.Json;
-using Bunit.Extensions;
-using System.IO;
 using System.Collections.Generic;
-using System;
+using System.IO;
+using System.Linq;
+using System.Text.Json;
+
+using Bunit.Extensions;
+
+using ContosoCrafts.WebSite.Models;
+
+using NUnit.Framework;
 
 namespace UnitTests.Pages.Article
 {
@@ -20,14 +21,14 @@ namespace UnitTests.Pages.Article
         }
 
         #endregion TestSetup
-        
+
         #region GetAllData
 
         [Test]
         public void GetAllData_Invalid_Does_Not_Return_Null_Or_Empty_Should_Return_False()
         {
             // Arrange
-            
+
             // Act
             var result = TestHelper.ArticleService.GetAllData();
 
@@ -51,7 +52,7 @@ namespace UnitTests.Pages.Article
 
             // Act
             IEnumerable<ArticleModel> result = TestHelper.ArticleService.GetAllData();
-            
+
             // Assert
             Assert.AreEqual(expected.ToString(), result.ToString());
         }
