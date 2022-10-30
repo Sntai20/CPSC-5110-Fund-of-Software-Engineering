@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 
-using Microsoft.AspNetCore.Mvc;
-
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoCrafts.WebSite.Controllers
 {
@@ -19,7 +19,7 @@ namespace ContosoCrafts.WebSite.Controllers
         public JsonFileArticleService ArticleService { get; }
 
         [HttpGet]
-        public IEnumerable<ArticleModel> Get() 
+        public IEnumerable<ArticleModel> Get()
         {
             return ArticleService.GetAllData();
         }
@@ -28,7 +28,7 @@ namespace ContosoCrafts.WebSite.Controllers
         public ActionResult Patch([FromBody] RatingRequest request)
         {
             ArticleService.AddRating(request.ArticleId, request.Rating);
-            
+
             return Ok();
         }
 
