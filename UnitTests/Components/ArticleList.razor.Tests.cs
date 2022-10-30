@@ -1,12 +1,12 @@
-using ContosoCrafts.WebSite.Components;
-using ContosoCrafts.WebSite.Services;
-
-using Microsoft.Extensions.DependencyInjection;
-
-using NUnit.Framework;
-
 namespace UnitTests.Components
 {
+    using ContosoCrafts.WebSite.Components;
+    using ContosoCrafts.WebSite.Services;
+
+    using Microsoft.Extensions.DependencyInjection;
+
+    using NUnit.Framework;
+
     public class ArticleListTests : BunitTestContext
     {
         #region TestSetup
@@ -22,7 +22,7 @@ namespace UnitTests.Components
         public void ArticleList_Default_Should_Return_Content()
         {
             // Arrange
-            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
+            _ = Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
 
             // Act
             var page = RenderComponent<ArticleList>();
