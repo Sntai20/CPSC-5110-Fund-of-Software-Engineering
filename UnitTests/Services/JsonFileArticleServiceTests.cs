@@ -1,4 +1,4 @@
-namespace UnitTests.Services
+﻿namespace UnitTests.Services
 {
     using System.Collections.Generic;
     using System.IO;
@@ -10,11 +10,19 @@ namespace UnitTests.Services
     using ContosoCrafts.WebSite.Models;
 
     using NUnit.Framework;
-
+    
+    /// <summary>
+    /// This class holds the tests for the main JsonFileArticleService class.
+    /// </summary>
     public class JsonFileArticleServiceTests
     {
+
         #region TestSetup
 
+
+        /// <summary>
+        /// Initialize tests for JsonFileArticleService class
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -22,8 +30,12 @@ namespace UnitTests.Services
 
         #endregion TestSetup
 
+
         #region GetAllData
 
+        /// <summary>
+        /// Test of invalid state for GetAllData method
+        /// </summary>
         [Test]
         public void GetAllData_Invalid_Does_Not_Return_Null_Or_Empty_Should_Return_False()
         {
@@ -36,6 +48,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result.IsNullOrEmpty());
         }
 
+        /// <summary>
+        /// Test for valid result of GetAllData method
+        /// </summary>
         [Test]
         public void GetAllData_Valid_Returns_Contents_Of_Json_File_Should_Return_True()
         {
@@ -60,6 +75,9 @@ namespace UnitTests.Services
         #endregion GetAllData
 
         #region AddRating
+        /// <summary>
+        /// Testing invalid null input for AddRating method
+        /// </summary>
         [Test]
         public void AddRating_InValid_Article_Null_Should_Return_False()
         {
@@ -72,6 +90,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Testing invalid empty string input for AddRating method
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Empty_Should_Return_False()
         {
@@ -84,6 +105,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Testing invalid input for AddRating method
+        /// </summary>
         [Test]
         public void AddRating_InValid_Data_Null_Should_Return_False()
         {
@@ -96,6 +120,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Testing invalid megatove rating value for AddRating method
+        /// </summary>
         [Test]
         public void AddRating_InValid_Negative_Rating_Should_Return_False()
         {
@@ -109,6 +136,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Testing invalid, too high rating value for AddRating method
+        /// </summary>
         [Test]
         public void AddRating_InValid_Too_High_Rating_Should_Return_False()
         {
@@ -122,6 +152,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Testing for creation of ratings array when a first rating is provided to AddRating method
+        /// </summary>
         [Test]
         public void AddRating_Valid_Create_Data_Ratings_Array_Should_Return_True()
         {
@@ -137,6 +170,9 @@ namespace UnitTests.Services
 
         }
 
+        /// <summary>
+        /// Testing typical, valid usage of AddRating method
+        /// </summary>
         [Test]
         public void AddRating_Valid_Article_Rating_5_Should_Return_True()
         {
@@ -159,6 +195,9 @@ namespace UnitTests.Services
 
         #region CreateData
 
+        /// <summary>
+        /// Testing typical, valid usage of CreateData method
+        /// </summary>
         [Test]
         public void CreateData_Valid_Last_Value_Matches_Created_Values_Should_Return_True()
         {
@@ -178,6 +217,10 @@ namespace UnitTests.Services
         #endregion CreateData
 
         #region UpdateData
+        
+        /// <summary>
+        /// Testing typical, valid usage of UpdateData method
+        /// </summary>
         [Test]
         public void UpdateData_Valid_Updated_Value_Matches_Should_Return_True()
         {
