@@ -1,10 +1,10 @@
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace ContosoCrafts.WebSite.Models
+﻿namespace ContosoCrafts.WebSite.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
+
     public class ArticleModel
     {
         // Properties: Unique Identifier, Author(s), Publish Date, URL, Image, Title, Tags, Article Text/Body.
