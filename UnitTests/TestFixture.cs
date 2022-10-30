@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 
 using NUnit.Framework;
 
@@ -24,8 +24,6 @@ namespace UnitTests
             // C:\repos\5110\ClassBaseline\src\wwwroot\data
             // C:\repos\5110\ClassBaseline\src\bin\Debug\net5.0\wwwroot\data
 
-
-
             var DataWebPath = "../../../../src/bin/Debug/net6.0/wwwroot/data";
             var DataUTDirectory = "wwwroot";
             var DataUTPath = DataUTDirectory + "/data";
@@ -35,7 +33,7 @@ namespace UnitTests
             {
                 Directory.Delete(DataUTDirectory, true);
             }
-            
+
             // Make the directory
             Directory.CreateDirectory(DataUTPath);
 
