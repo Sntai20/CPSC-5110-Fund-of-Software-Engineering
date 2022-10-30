@@ -1,13 +1,13 @@
-using ContosoCrafts.WebSite.Services;
-
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 namespace ContosoCrafts.WebSite
 {
+    using ContosoCrafts.WebSite.Services;
+
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -20,11 +20,11 @@ namespace ContosoCrafts.WebSite
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages().AddRazorRuntimeCompilation();
-            services.AddServerSideBlazor();
-            services.AddHttpClient();
-            services.AddControllers();
-            services.AddTransient<JsonFileArticleService>();
+            _ = services.AddRazorPages().AddRazorRuntimeCompilation();
+            _ = services.AddServerSideBlazor();
+            _ = services.AddHttpClient();
+            _ = services.AddControllers();
+            _ = services.AddTransient<JsonFileArticleService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,29 +32,29 @@ namespace ContosoCrafts.WebSite
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                _ = app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                _ = app.UseExceptionHandler("/Error");
 
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                _ = app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            _ = app.UseHttpsRedirection();
 
-            app.UseStaticFiles();
+            _ = app.UseStaticFiles();
 
-            app.UseRouting();
+            _ = app.UseRouting();
 
-            app.UseAuthorization();
+            _ = app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+            _ = app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
-                endpoints.MapControllers();
-                endpoints.MapBlazorHub();
+                _ = endpoints.MapRazorPages();
+                _ = endpoints.MapControllers();
+                _ = endpoints.MapBlazorHub();
 
                 // endpoints.MapGet("/articles", (context) => 
                 // {
