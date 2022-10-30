@@ -1,13 +1,13 @@
-﻿
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Pages.Article;
-
-using Microsoft.AspNetCore.Mvc;
-
-using NUnit.Framework;
-
-namespace UnitTests.Pages.Article.Update
+﻿namespace UnitTests.Pages.Article
 {
+
+    using ContosoCrafts.WebSite.Models;
+    using ContosoCrafts.WebSite.Pages.Article;
+
+    using Microsoft.AspNetCore.Mvc;
+
+    using NUnit.Framework;
+
     public class UpdateTests
     {
         #region TestSetup
@@ -77,7 +77,7 @@ namespace UnitTests.Pages.Article.Update
             pageModel.ModelState.AddModelError("bogus", "bogus error");
 
             // Act
-            var result = pageModel.OnPost() as ActionResult;
+            _ = pageModel.OnPost() as ActionResult;
 
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
