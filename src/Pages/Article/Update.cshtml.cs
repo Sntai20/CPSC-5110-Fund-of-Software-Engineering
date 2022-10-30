@@ -1,13 +1,13 @@
-using System.Linq;
-
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
-
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace ContosoCrafts.WebSite.Pages.Article
 {
+    using System.Linq;
+
+    using ContosoCrafts.WebSite.Models;
+    using ContosoCrafts.WebSite.Services;
+
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+
     /// <summary>
     /// Manage the Update of the data for a single record
     /// </summary>
@@ -54,7 +54,7 @@ namespace ContosoCrafts.WebSite.Pages.Article
                 return Page();
             }
 
-            ProductService.UpdateData(Article);
+            _ = ProductService.UpdateData(Article);
 
             return RedirectToPage("./Index");
         }
