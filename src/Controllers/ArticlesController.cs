@@ -1,12 +1,12 @@
-using System.Collections.Generic;
-
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
-
-using Microsoft.AspNetCore.Mvc;
-
 namespace ContosoCrafts.WebSite.Controllers
 {
+    using System.Collections.Generic;
+
+    using ContosoCrafts.WebSite.Models;
+    using ContosoCrafts.WebSite.Services;
+
+    using Microsoft.AspNetCore.Mvc;
+
     [ApiController]
     [Route("[controller]")]
     public class ArticlesController : ControllerBase
@@ -27,7 +27,7 @@ namespace ContosoCrafts.WebSite.Controllers
         [HttpPatch]
         public ActionResult Patch([FromBody] RatingRequest request)
         {
-            ArticleService.AddRating(request.ArticleId, request.Rating);
+            _ = ArticleService.AddRating(request.ArticleId, request.Rating);
 
             return Ok();
         }
