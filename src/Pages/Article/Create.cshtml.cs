@@ -1,11 +1,11 @@
-﻿using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
-
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace ContosoCrafts.WebSite.Pages.Article
+﻿namespace ContosoCrafts.WebSite.Pages.Article
 {
+    using ContosoCrafts.WebSite.Models;
+    using ContosoCrafts.WebSite.Services;
+
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+
     /// <summary>
     /// Create Page
     /// </summary>
@@ -36,7 +36,7 @@ namespace ContosoCrafts.WebSite.Pages.Article
             Product = ArticleService.CreateData();
 
             // Redirect the webpage to the Update page populated with the data so the user can fill in the fields
-            return RedirectToPage("./Update", new { Id = Product.Id });
+            return RedirectToPage("./Update", new { Product.Id });
         }
     }
 }
