@@ -1,12 +1,12 @@
-using System.Collections.Generic;
-
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
-
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace ContosoCrafts.WebSite.Pages.Article
 {
+    using System.Collections.Generic;
+
+    using ContosoCrafts.WebSite.Models;
+    using ContosoCrafts.WebSite.Services;
+
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+
     /// <summary>
     /// Index Page will return all the data to show the user
     /// </summary>
