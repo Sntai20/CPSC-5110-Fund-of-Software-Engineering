@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ContosoCrafts.WebSite.Models
+﻿namespace ContosoCrafts.WebSite.Models
 {
     public enum ArticleTypeEnum
     {
@@ -26,7 +21,7 @@ namespace ContosoCrafts.WebSite.Models
                 ArticleTypeEnum.News => "News",
                 ArticleTypeEnum.Music => "Music",
                 ArticleTypeEnum.Food => "Food",
- 
+
                 // Default, Unknown
                 _ => "",
             };
