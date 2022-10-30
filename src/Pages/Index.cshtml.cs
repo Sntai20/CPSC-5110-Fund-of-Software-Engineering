@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
+
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 
 namespace ContosoCrafts.WebSite.Pages
 {
@@ -22,10 +22,10 @@ namespace ContosoCrafts.WebSite.Pages
 
         public JsonFileArticleService ArticleService { get; }
         public IEnumerable<ArticleModel> Articles { get; private set; }
-  
+
         public void OnGet()
         {
             Articles = ArticleService.GetAllData();
-        }  
+        }
     }
 }
