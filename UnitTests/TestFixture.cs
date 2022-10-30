@@ -13,6 +13,10 @@
         // Path to the data folder for the content
         public static string DataContentRootPath = "./data/";
 
+
+        /// <summary>
+        /// Configure test prior to execution.
+        /// </summary>
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
@@ -24,8 +28,13 @@
             // C:\repos\5110\ClassBaseline\src\wwwroot\data
             // C:\repos\5110\ClassBaseline\src\bin\Debug\net5.0\wwwroot\data
 
+            // path to data
             var DataWebPath = "../../../../src/bin/Debug/net6.0/wwwroot/data";
+            
+            // path to unit test directory
             var DataUTDirectory = "wwwroot";
+
+            // path to unit test data
             var DataUTPath = DataUTDirectory + "/data";
 
             // Delete the Detination folder
@@ -48,6 +57,9 @@
             }
         }
 
+        /// <summary>
+        /// Ensures a clean state after test execution.
+        /// </summary>
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
