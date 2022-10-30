@@ -1,14 +1,14 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.Json;
-
-using ContosoCrafts.WebSite.Models;
-
-using Microsoft.AspNetCore.Hosting;
-
 namespace ContosoCrafts.WebSite.Services
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text.Json;
+
+    using ContosoCrafts.WebSite.Models;
+
+    using Microsoft.AspNetCore.Hosting;
+
     public class JsonFileArticleService
     {
         public JsonFileArticleService(IWebHostEnvironment webHostEnvironment)
@@ -18,21 +18,16 @@ namespace ContosoCrafts.WebSite.Services
 
         public IWebHostEnvironment WebHostEnvironment { get; }
 
-        private string JsonFileName
-        {
-            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "articles.json"); }
-        }
+        private string JsonFileName => Path.Combine(WebHostEnvironment.WebRootPath, "data", "articles.json");
 
         public IEnumerable<ArticleModel> GetAllData()
         {
-            using (var jsonFileReader = File.OpenText(JsonFileName))
-            {
-                return JsonSerializer.Deserialize<ArticleModel[]>(jsonFileReader.ReadToEnd(),
-                    new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-            }
+            using var jsonFileReader = File.OpenText(JsonFileName);
+            return JsonSerializer.Deserialize<ArticleModel[]>(jsonFileReader.ReadToEnd(),
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
         }
 
         /// <summary>
@@ -74,10 +69,7 @@ namespace ContosoCrafts.WebSite.Services
             }
 
             // Check to see if the rating exist, if there are none, then create the array
-            if (data.Ratings == null)
-            {
-                data.Ratings = new int[] { };
-            }
+            data.Ratings ??= new int[] { };
 
             // Add the Rating to the Array
             var ratings = data.Ratings.ToList();
@@ -128,17 +120,15 @@ namespace ContosoCrafts.WebSite.Services
         private void SaveData(IEnumerable<ArticleModel> articles)
         {
 
-            using (var outputStream = File.Create(JsonFileName))
-            {
-                JsonSerializer.Serialize<IEnumerable<ArticleModel>>(
-                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
-                    {
-                        SkipValidation = true,
-                        Indented = true
-                    }),
-                    articles
-                );
-            }
+            using var outputStream = File.Create(JsonFileName);
+            JsonSerializer.Serialize<IEnumerable<ArticleModel>>(
+                new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                {
+                    SkipValidation = true,
+                    Indented = true
+                }),
+                articles
+            );
         }
 
         /// <summary>
