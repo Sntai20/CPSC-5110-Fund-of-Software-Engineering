@@ -1,10 +1,10 @@
 ﻿
+using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Pages.Article;
+
 using Microsoft.AspNetCore.Mvc;
 
 using NUnit.Framework;
-
-using ContosoCrafts.WebSite.Pages.Article;
-using ContosoCrafts.WebSite.Models;
 
 namespace UnitTests.Pages.Article.Update
 {
