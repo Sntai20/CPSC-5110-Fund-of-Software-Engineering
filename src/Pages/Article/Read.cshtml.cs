@@ -1,4 +1,4 @@
-namespace ContosoCrafts.WebSite.Pages.Article
+﻿namespace ContosoCrafts.WebSite.Pages.Article
 {
     using System.Linq;
 
@@ -9,14 +9,13 @@ namespace ContosoCrafts.WebSite.Pages.Article
 
     public class ReadModel : PageModel
     {
-        // Data middletier
+        // Data middle tier
         public JsonFileArticleService ArticleService { get; }
 
         /// <summary>
-        /// Defualt Construtor
+        /// The default constructor.
         /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="articleService"></param>
+        /// <param name="articleService">The service responsible for interacting with the data store.</param>
         public ReadModel(JsonFileArticleService articleService)
         {
             ArticleService = articleService;
@@ -28,10 +27,10 @@ namespace ContosoCrafts.WebSite.Pages.Article
         /// <summary>
         /// REST Get request
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">The article id as a string.</param>
         public void OnGet(string id)
         {
-            Article = ArticleService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
+            this.Article = ArticleService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
     }
 }
