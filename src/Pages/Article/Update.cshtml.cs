@@ -14,16 +14,15 @@
     public class UpdateModel : PageModel
     {
         // Data middle tier
-        public JsonFileArticleService ProductService { get; }
+        public JsonFileArticleService ArticleService { get; }
 
         /// <summary>
         /// Default Constructor
         /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="productService"></param>
-        public UpdateModel(JsonFileArticleService productService)
+        /// <param name="articleService"></param>
+        public UpdateModel(JsonFileArticleService articleService)
         {
-            ProductService = productService;
+            ArticleService = articleService;
         }
 
         // The data to show, bind to it for the post.
@@ -37,7 +36,7 @@
         /// <param name="id">The article Id as a string.</param>
         public void OnGet(string id)
         {
-            Article = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
+            Article = ArticleService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
 
         /// <summary>
@@ -54,7 +53,7 @@
                 return Page();
             }
 
-            _ = ProductService.UpdateData(Article);
+            _ = ArticleService.UpdateData(Article);
 
             return RedirectToPage("./Index");
         }
