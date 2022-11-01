@@ -15,28 +15,26 @@
         public JsonFileArticleService ArticleService { get; }
 
         /// <summary>
-        /// Defualt Construtor
+        /// Default Constructor
         /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="productService"></param>
+        /// <param name="productService">The service responsible for interacting with the data store.</param>
         public CreateModel(JsonFileArticleService articleService)
         {
             ArticleService = articleService;
         }
 
         // The data to show
-        public ArticleModel Product;
+        public ArticleModel Article;
 
         /// <summary>
         /// REST Get request
         /// </summary>
-        /// <param name="id"></param>
+        /// <returns>Redirect the web page to the Update page populated with the data so the user can fill in the fields.</returns>
         public IActionResult OnGet()
         {
-            Product = ArticleService.CreateData();
+            this.Article = ArticleService.CreateData();
 
-            // Redirect the webpage to the Update page populated with the data so the user can fill in the fields
-            return RedirectToPage("./Update", new { Product.Id });
+            return RedirectToPage("./Update", new { this.Article.Id });
         }
     }
 }
