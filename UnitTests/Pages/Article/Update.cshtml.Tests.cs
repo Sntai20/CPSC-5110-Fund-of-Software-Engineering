@@ -7,7 +7,9 @@
     using Microsoft.AspNetCore.Mvc;
 
     using NUnit.Framework;
-
+    /// <summary>
+    /// This class holds the tests for the Update.cshtml.Tests.cs.
+    /// </summary>
     public class UpdateTests
     {
         #region TestSetup
