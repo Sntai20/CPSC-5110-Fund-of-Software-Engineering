@@ -16,7 +16,9 @@
     using Moq;
 
     using NUnit.Framework;
-
+    /// <summary>
+    /// This class holds the tests for the Create.cshtml.Tests.cs
+    /// </summary>
     public class CreateTests
     {
         #region TestSetup
