@@ -1,4 +1,4 @@
-namespace ContosoCrafts.WebSite.Pages.Article
+﻿namespace ContosoCrafts.WebSite.Pages.Article
 {
     using System.Collections.Generic;
 
@@ -8,23 +8,27 @@ namespace ContosoCrafts.WebSite.Pages.Article
     using Microsoft.AspNetCore.Mvc.RazorPages;
 
     /// <summary>
-    /// Index Page will return all the data to show the user
+    /// Index Page will return all the data to show the user.
     /// </summary>
     public class IndexModel : PageModel
     {
         /// <summary>
         /// Default Constructor
         /// </summary>
-        /// <param name="articleService"></param>
+        /// <param name="articleService">The service responsible for interacting with the data store.</param>
         public IndexModel(JsonFileArticleService articleService)
         {
             ArticleService = articleService;
         }
 
-        // Data Service
+        /// <summary>
+        /// Store the service responsible for interacting with the data store.
+        /// </summary>
         public JsonFileArticleService ArticleService { get; }
 
-        // Collection of the Data
+        /// <summary>
+        /// Collection of the Data.
+        /// </summary>
         public IEnumerable<ArticleModel> Articles { get; private set; }
 
         /// <summary>
