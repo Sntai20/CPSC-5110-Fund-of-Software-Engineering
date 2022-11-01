@@ -18,7 +18,9 @@
     using Moq;
 
     using NUnit.Framework;
-
+    /// <summary>
+    /// This class holds the tests for the Read.cshtml.Tests.cs.
+    /// </summary>
     public class ReadTests
     {
         #region TestSetup
