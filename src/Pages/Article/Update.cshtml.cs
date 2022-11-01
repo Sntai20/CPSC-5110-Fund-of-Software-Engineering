@@ -1,4 +1,4 @@
-namespace ContosoCrafts.WebSite.Pages.Article
+﻿namespace ContosoCrafts.WebSite.Pages.Article
 {
     using System.Linq;
 
@@ -9,15 +9,15 @@ namespace ContosoCrafts.WebSite.Pages.Article
     using Microsoft.AspNetCore.Mvc.RazorPages;
 
     /// <summary>
-    /// Manage the Update of the data for a single record
+    /// Manage the Update of the data for a single record.
     /// </summary>
     public class UpdateModel : PageModel
     {
-        // Data middletier
+        // Data middle tier
         public JsonFileArticleService ProductService { get; }
 
         /// <summary>
-        /// Defualt Construtor
+        /// Default Constructor
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="productService"></param>
@@ -26,7 +26,7 @@ namespace ContosoCrafts.WebSite.Pages.Article
             ProductService = productService;
         }
 
-        // The data to show, bind to it for the post
+        // The data to show, bind to it for the post.
         [BindProperty]
         public ArticleModel Article { get; set; }
 
@@ -34,7 +34,7 @@ namespace ContosoCrafts.WebSite.Pages.Article
         /// REST Get request
         /// Loads the Data
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">The article Id as a string.</param>
         public void OnGet(string id)
         {
             Article = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
@@ -46,7 +46,7 @@ namespace ContosoCrafts.WebSite.Pages.Article
         /// Call the data layer to Update that data
         /// Then return to the index page
         /// </summary>
-        /// <returns></returns>
+        /// <returns>IActionResult, redirect to the Index page.</returns>
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
