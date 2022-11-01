@@ -41,7 +41,7 @@
 
         /// <summary>
         /// Post the model back to the page
-        /// The model is in the class variable Product
+        /// The model is in the class variable Article
         /// Call the data layer to Update that data
         /// Then return to the index page
         /// </summary>
