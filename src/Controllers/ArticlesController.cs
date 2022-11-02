@@ -11,6 +11,10 @@ namespace ContosoCrafts.WebSite.Controllers
     [Route("[controller]")]
     public class ArticlesController : ControllerBase
     {
+        /// <summary>
+        /// Controller class for Articles
+        /// </summary>
+        /// <param name="articleService"></param>
         public ArticlesController(JsonFileArticleService articleService)
         {
             ArticleService = articleService;
@@ -24,6 +28,11 @@ namespace ContosoCrafts.WebSite.Controllers
             return ArticleService.GetAllData();
         }
 
+        /// <summary>
+        /// Add requested rating to article. 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPatch]
         public ActionResult Patch([FromBody] RatingRequest request)
         {
@@ -31,7 +40,9 @@ namespace ContosoCrafts.WebSite.Controllers
 
             return Ok();
         }
-
+        /// <summary>
+        /// Define a rating request class with article ID and rating. 
+        /// </summary>
         public class RatingRequest
         {
             public string ArticleId { get; set; }
