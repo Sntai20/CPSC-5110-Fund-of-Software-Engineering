@@ -7,17 +7,25 @@ namespace UnitTests.Components
 
     using NUnit.Framework;
 
+
+    /// <summary>
+    /// Article list test set.
+    /// </summary>
     public class ArticleListTests : BunitTestContext
     {
         #region TestSetup
-
+        /// <summary>
+        /// Initialize the test set.
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
         }
 
         #endregion TestSetup
-
+        /// <summary>
+        /// Test for returning list of articles. 
+        /// </summary>
         [Test]
         public void ArticleList_Default_Should_Return_Content()
         {
