@@ -16,7 +16,9 @@
     using Moq;
 
     using NUnit.Framework;
-
+    /// <summary>
+    /// This class holds the tests for the Index.cshtml.Tests.cs
+    /// </summary>
     public class IndexTests
     {
         #region TestSetup
