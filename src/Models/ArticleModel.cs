@@ -7,6 +7,9 @@
 
     public class ArticleModel
     {
+        /// <summary>
+        /// Define attributes of Article Model. 
+        /// </summary>
         // Properties: Unique Identifier, Author(s), Publish Date, URL, Image, Title, Tags, Article Text/Body.
         public string Id { get; set; }
         public string Author { get; set; }
