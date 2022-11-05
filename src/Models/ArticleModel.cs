@@ -20,7 +20,7 @@
 
         public string Url { get; set; }
 
-        [StringLength(maximumLength: 33, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and less than {1}")]
+        [StringLength(maximumLength: 128, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and up to {1} characters")]
         public string Title { get; set; }
 
         public string Description { get; set; }
