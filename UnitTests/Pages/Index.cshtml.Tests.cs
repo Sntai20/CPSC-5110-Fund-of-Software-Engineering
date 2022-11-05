@@ -1,4 +1,4 @@
-namespace UnitTests.Pages
+﻿namespace UnitTests.Pages
 {
     using System.Linq;
 
@@ -10,12 +10,20 @@ namespace UnitTests.Pages
 
     using NUnit.Framework;
 
+    /// <summary>
+    /// Test class for Index page
+    /// </summary>
     public class IndexTests
     {
         #region TestSetup
 
+        // Data field to hold Index page for this test
         public static IndexModel pageModel;
 
+
+        /// <summary>
+        /// Set up test prior to execution
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -29,6 +37,9 @@ namespace UnitTests.Pages
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Test valid result for OnGet method.
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Articles()
         {
