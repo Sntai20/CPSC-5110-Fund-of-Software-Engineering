@@ -13,8 +13,13 @@
     public class DeleteTests
     {
         #region TestSetup
+     
+        // Data field to hold page model specific to the Delete function
         public static DeleteModel pageModel;
 
+        /// <summary>
+        /// Setup test prior to execution.
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -26,6 +31,10 @@
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test a valid result for OnGet method
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Articles()
         {
@@ -41,6 +50,10 @@
         #endregion OnGet
 
         #region OnPostAsync
+
+        /// <summary>
+        /// Test a valid result for OnPost method
+        /// </summary>
         [Test]
         public void OnPostAsync_Valid_Should_Return_Articles()
         {
@@ -62,6 +75,9 @@
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
 
+        /// <summary>
+        /// Test an invalid result for OnPost method
+        /// </summary>
         [Test]
         public void OnPostAsync_InValid_Model_NotValid_Return_Page()
         {
