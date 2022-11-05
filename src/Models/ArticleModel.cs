@@ -29,7 +29,7 @@
 
         public ArticleTypeEnum ArticleType { get; set; } = ArticleTypeEnum.Undefined;
 
-        [Range(0, 10000, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
+        [Range(0, 10000, ErrorMessage = "Value for {0} must be at least {1} and no more than {2}.")]
         public int Price { get; set; }
 
         // Store the Comments entered by the users on this article.
