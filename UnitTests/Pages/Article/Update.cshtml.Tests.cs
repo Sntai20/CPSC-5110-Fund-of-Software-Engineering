@@ -15,6 +15,9 @@
         #region TestSetup
         public static UpdateModel pageModel;
 
+        /// <summary>
+        /// Setup test prior to execution.
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -26,6 +29,10 @@
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test a valid result from the OnGet method
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Articles()
         {
@@ -41,6 +48,9 @@
         #endregion OnGet
 
         #region OnPostAsync
+        /// <summary>
+        /// Test valid result from OnPost method
+        /// </summary>
         [Test]
         public void OnPostAsync_Valid_Should_Return_Articles()
         {
@@ -62,6 +72,10 @@
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
 
+
+        /// <summary>
+        /// Test an invalid result with OnPost method
+        /// </summary>
         [Test]
         public void OnPostAsync_InValid_Model_NotValid_Return_Page()
         {
