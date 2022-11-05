@@ -1,4 +1,4 @@
-namespace UnitTests
+﻿namespace UnitTests
 {
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;

@@ -1,4 +1,4 @@
-namespace UnitTests
+﻿namespace UnitTests
 {
     using Bunit;
 
@@ -16,7 +16,7 @@ namespace UnitTests
             TestContext = new Bunit.TestContext();
         }
 
-        // When done displose removes it, to free up system resources
+        // When done dispose removes it, to free up system resources
         [TearDown]
         public void TearDown()
         {
