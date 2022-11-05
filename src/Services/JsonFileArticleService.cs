@@ -160,10 +160,10 @@
             var data = new ArticleModel()
             {
                 Id = System.Guid.NewGuid().ToString(),
-                Title = "Enter Title",
-                Description = "Enter Description",
-                Url = "Enter URL",
-                Image = "",
+                Title = "Default title",
+                Description = "Article description",
+                Url = "Article URL",
+                Image = "No image specified",
             };
 
             // Get the current set, and append the new record to it because IEnumerable does not have Add.

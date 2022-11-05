@@ -197,31 +197,5 @@
     "ArticleType": 0,
     "Price": 0,
     "CommentList": []
-  },
-  {
-    "Id": "0b2163df-cd91-4795-847e-306ae7e090b8",
-    "Author": null,
-    "PublishDate": null,
-    "img": "",
-    "Url": "Enter URL",
-    "Title": "Enter Title",
-    "Description": "Enter Description",
-    "Ratings": null,
-    "ArticleType": 0,
-    "Price": 0,
-    "CommentList": []
-  },
-  {
-    "Id": "d888dcc4-517c-4964-ad2e-434c4c5e94d1",
-    "Author": null,
-    "PublishDate": null,
-    "img": "",
-    "Url": "Enter URL",
-    "Title": "Enter Title",
-    "Description": "Enter Description",
-    "Ratings": null,
-    "ArticleType": 0,
-    "Price": 0,
-    "CommentList": []
   }
 ]
