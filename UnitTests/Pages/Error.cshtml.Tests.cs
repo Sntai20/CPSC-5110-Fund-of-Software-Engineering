@@ -1,4 +1,4 @@
-namespace UnitTests.Pages
+﻿namespace UnitTests.Pages
 {
     using System.Diagnostics;
 
@@ -10,11 +10,20 @@ namespace UnitTests.Pages
 
     using NUnit.Framework;
 
+    /// <summary>
+    /// Test class for the Error page
+    /// </summary>
     public class ErrorTests
     {
+        
         #region TestSetup
+
+        // data field to hold the Error page
         public static ErrorModel pageModel;
 
+        /// <summary>
+        /// Setup test prior to execution
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -30,6 +39,10 @@ namespace UnitTests.Pages
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test successful execution of the OnGet method.
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
@@ -49,6 +62,9 @@ namespace UnitTests.Pages
             Assert.AreEqual(activity.Id, pageModel.RequestId);
         }
 
+        /// <summary>
+        /// Test an invalid, null input to the OnGet method
+        /// </summary>
         [Test]
         public void OnGet_InValid_Activity_Null_Should_Return_TraceIdentifier()
         {
