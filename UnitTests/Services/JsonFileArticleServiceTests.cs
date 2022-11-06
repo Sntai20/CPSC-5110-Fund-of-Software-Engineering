@@ -208,10 +208,10 @@
             var last = TestHelper.ArticleService.GetAllData().Last();
 
             // Assert
-            Assert.AreEqual("Enter Title", result.Title);
-            Assert.AreEqual("Enter Description", result.Description);
-            Assert.AreEqual("Enter URL", result.Url);
-            Assert.AreEqual("", result.Image);
+            Assert.AreEqual("Default title", result.Title);
+            Assert.AreEqual("Article description", result.Description);
+            Assert.AreEqual("Article URL", result.Url);
+            Assert.AreEqual("No image specified", result.Image);
             Assert.AreEqual(result.Id, last.Id);
         }
         #endregion CreateData
