@@ -4,6 +4,7 @@
 
     using ContosoCrafts.WebSite.Pages.Article;
     using ContosoCrafts.WebSite.Services;
+    using ContosoCrafts.WebSite.Models;
 
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -97,10 +98,22 @@
 
         #endregion TestSetup
 
+        #region OnGet
+        /// <summary>
+        /// Tests execution path when article name does not exist
+        /// </summary>
+        [Test]
+        public void OnGet_Invalid_Should_Redirect_To_Index()
+        {
+
+            // Act
+            var result = pageModel.OnGet("null");
+
+        }
+
         /// <summary>
         /// Test valid result from OnGet method.
         /// </summary>
-        #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Articles()
         {
