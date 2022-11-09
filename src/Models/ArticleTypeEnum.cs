@@ -26,7 +26,7 @@
         {
             return data switch
             {
-                ArticleTypeEnum.Travel => "Hand Made Items",
+                ArticleTypeEnum.Travel => "Travel",
                 ArticleTypeEnum.Books => "Books",
                 ArticleTypeEnum.News => "News",
                 ArticleTypeEnum.Music => "Music",
