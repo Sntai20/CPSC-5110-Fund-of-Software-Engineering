@@ -113,13 +113,15 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     /*Change background color of home page to powder blue.*/
-    background-color: #e6f3ff;
+    /*background-color: #e6f3ff;*/
+    background-color: #c68c53;
 }
 p {
     font-family: 'Nunito', sans-serif;
 }
 h1 {
     font-family: 'Nunito', sans-serif;
+    color: #ffffff;
 }
 ul {
     font-family: 'Nunito', sans-serif;
