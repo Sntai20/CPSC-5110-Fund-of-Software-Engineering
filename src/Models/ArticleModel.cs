@@ -33,6 +33,7 @@
         public string Title { get; set; }
 
         // Brief description of article content
+         [StringLength(maximumLength: 700 , MinimumLength = 1, ErrorMessage = "The Description should have a length of more than {2} and up to {1} characters")]
         public string Description { get; set; }
 
         // ratings for the article (remnant from Contoso Crafts site)

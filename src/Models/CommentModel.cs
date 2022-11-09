@@ -1,5 +1,4 @@
-
-namespace ContosoCrafts.WebSite.Models
+﻿namespace ContosoCrafts.WebSite.Models
 {
     /// <summary>
     /// Comments entered by the user about the Article
