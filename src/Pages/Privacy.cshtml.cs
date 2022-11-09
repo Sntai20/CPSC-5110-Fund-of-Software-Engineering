@@ -9,6 +9,10 @@
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;
+        /// <summary>
+        /// Logger
+        /// </summary>
+        /// <param name="logger"></param>
 
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
