@@ -51,6 +51,7 @@
         public int Price { get; set; }
 
         // Store the Comments entered by the users on this article.
+        [StringLength(maximumLength: 1024, MinimumLength = 1, ErrorMessage = "Comments must have a length of more than {2} and up to {1} characters")]
         public List<CommentModel> CommentList { get; set; } = new List<CommentModel>();
 
         // To string method to display article as a text stirng
