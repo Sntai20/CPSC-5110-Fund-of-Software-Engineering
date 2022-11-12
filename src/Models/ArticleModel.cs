@@ -24,6 +24,7 @@
 
         // A link to the image file to display in article preview
         [JsonPropertyName("img")]
+        [RegularExpression("^(http | https)://", ErrorMessage = "Image location must contain http:// or https://")]
         public string Image { get; set; }
 
         // Web location for the article
