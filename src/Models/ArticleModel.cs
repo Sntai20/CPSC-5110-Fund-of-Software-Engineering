@@ -17,6 +17,7 @@
         public string Id { get; set; }
 
         // Author Name
+        [RegularExpression(@"^[a-zA-Z_\s-]{1,40}$", ErrorMessage = "Only upper case, lower case, and dashes are permitted.")]
         public string Author { get; set; }
         
         // Date article was published
