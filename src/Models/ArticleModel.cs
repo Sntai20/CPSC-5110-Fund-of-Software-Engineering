@@ -29,7 +29,7 @@
         public string Url { get; set; }
 
         // Article title
-        [StringLength(maximumLength: 128, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and up to {1} characters")]
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Only upper and lower case letters, numbers, dashes, and underscores are permitted.")]
         public string Title { get; set; }
 
         // Brief description of article content
