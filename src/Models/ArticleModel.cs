@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.Text.Json;
     using System.Text.Json.Serialization;
+    using static System.Net.WebRequestMethods;
 
     public class ArticleModel
     {
@@ -26,6 +27,7 @@
         public string Image { get; set; }
 
         // Web location for the article
+        [RegularExpression("^(http | https)://", ErrorMessage = "URL must contain http:// or https://")]
         public string Url { get; set; }
 
         // Article title
