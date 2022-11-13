@@ -137,12 +137,7 @@
             articleData.Url = data.Url;
             
 
-            if (articleData.Image == null)
-            {
-                return null;
-            }
             articleData.Image = data.Image;
-
             articleData.Author = data.Author;
             articleData.PublishDate = data.PublishDate;
             articleData.Price = data.Price;
