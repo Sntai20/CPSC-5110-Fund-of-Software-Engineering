@@ -26,7 +26,7 @@
 
         // A link to the image file to display in article preview
         [Url(ErrorMessage = "Invalid URL")]
-        [Required(ErrorMessage = "URL field is required.")]
+        [Required(ErrorMessage = "Image field is required.")]
         public string Image { get; set; }
 
         // Web location for the article
