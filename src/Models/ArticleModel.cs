@@ -33,7 +33,7 @@
         public string Url { get; set; }
 
         // Article title
-        [RegularExpression(@"^[a-zA-Z0-9_\s-]{1,40}$", ErrorMessage = "Only upper and lower case letters, numbers, dashes, and underscores are permitted.")]
+        [StringLength(maximumLength: 40, MinimumLength = 1, ErrorMessage = "The Title should have a length of at least {2} and up to {1} characters")]
         public string Title { get; set; }
 
         // Brief description of article content
