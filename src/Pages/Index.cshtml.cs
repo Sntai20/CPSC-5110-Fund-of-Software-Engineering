@@ -1,10 +1,8 @@
 ﻿namespace ContosoCrafts.WebSite.Pages
 {
     using System.Collections.Generic;
-
     using ContosoCrafts.WebSite.Models;
     using ContosoCrafts.WebSite.Services;
-
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
 
@@ -14,14 +12,14 @@
     public class IndexModel : PageModel
     {
         // message logging interface
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<IndexModel> logger;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public IndexModel(ILogger<IndexModel> logger, JsonFileArticleService articleService)
         {
-            _logger = logger;
+            this.logger = logger;
             ArticleService = articleService;
         }
 
