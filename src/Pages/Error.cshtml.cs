@@ -1,20 +1,17 @@
 ﻿namespace ContosoCrafts.WebSite.Pages
 {
     using System.Diagnostics;
-
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
-    /// <summary>
-    /// Error page
-    /// </summary>
-
+    
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
    
-    
+    /// <summary>
+    /// Error page.
+    /// </summary>
     public class ErrorModel : PageModel
     {
-     
         // The data to show, bind to it for the post.
         public string RequestId { get; set; }
 
@@ -26,10 +23,10 @@
         {
             _logger = logger;
         }
+        
         /// <summary>
         /// REST Get request
         /// </summary>
-       
         public void OnGet()
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
