@@ -12,7 +12,10 @@
         /// Define attributes of Article Model. 
         /// </summary>
         // Properties: Unique Identifier, Author(s), Publish Date, URL, Image, Title, Tags, Article Text/Body.
-       
+
+        // Regex URL validation string
+        private const string urlRegEx = "^(http(s?)\\:\\/\\/)";
+        
         // Unique identifier for the article
         public string Id { get; set; }
 
@@ -25,11 +28,11 @@
 
         // A link to the image file to display in article preview
         [JsonPropertyName("img")]
-        [RegularExpression("^(http | https)://", ErrorMessage = "Image location must contain http:// or https://")]
+        [RegularExpression(urlRegEx, ErrorMessage = "Invalid URL format.")]
         public string Image { get; set; }
 
         // Web location for the article
-        [RegularExpression("^(http | https)://", ErrorMessage = "URL must contain http:// or https://")]
+        [RegularExpression(urlRegEx, ErrorMessage = "Invalid URL format.")]
         public string Url { get; set; }
 
         // Article title
