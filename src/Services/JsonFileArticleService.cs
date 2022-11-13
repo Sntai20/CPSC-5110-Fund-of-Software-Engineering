@@ -116,15 +116,36 @@
             }
 
             // Update the data to the new passed in values.
+            if (articleData.Title == null)
+            {
+                return null;
+            }
             articleData.Title = data.Title;
-            articleData.Author = data.Author;
+
+
+            if (articleData.Description == null)
+            {
+                return null;
+            }
             articleData.Description = data.Description.Trim();
+            
+
+            if (articleData.Url == null)
+            {
+                return null;
+            }
             articleData.Url = data.Url;
+            
+
+            if (articleData.Image == null)
+            {
+                return null;
+            }
             articleData.Image = data.Image;
 
+            articleData.Author = data.Author;
             articleData.PublishDate = data.PublishDate;
             articleData.Price = data.Price;
-
             articleData.CommentList = data.CommentList;
 
             SaveData(articles);
