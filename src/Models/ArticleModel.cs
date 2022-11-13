@@ -13,9 +13,7 @@
         /// </summary>
         // Properties: Unique Identifier, Author(s), Publish Date, URL, Image, Title, Tags, Article Text/Body.
 
-        // Regex URL validation string
-        private const string urlRegEx = "^(http(s?)\\:\\/\\/)";
-        
+       
         // Unique identifier for the article
         public string Id { get; set; }
 
@@ -27,9 +25,8 @@
         public string PublishDate { get; set; }
 
         // A link to the image file to display in article preview
-        [JsonPropertyName("img")]
-        [Required(ErrorMessage = "Image field is required.")]
-        [RegularExpression(urlRegEx, ErrorMessage = "Invalid URL format.")]
+        [Url(ErrorMessage = "Invalid URL")]
+        [Required(ErrorMessage = "URL field is required.")]
         public string Image { get; set; }
 
         // Web location for the article
