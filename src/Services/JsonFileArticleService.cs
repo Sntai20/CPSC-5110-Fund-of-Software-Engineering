@@ -4,9 +4,7 @@
     using System.IO;
     using System.Linq;
     using System.Text.Json;
-
     using ContosoCrafts.WebSite.Models;
-
     using Microsoft.AspNetCore.Hosting;
 
     /// <summary>
@@ -68,7 +66,7 @@
 
             var articles = GetAllData();
 
-            // Look up the article, if it does not exist, return
+            // Look up the article, if it does not exist, return.
             var data = articles.FirstOrDefault(x => x.Id.Equals(articleId));
             if (data == null)
             {
@@ -87,7 +85,8 @@
                 return false;
             }
 
-            // Check to see if the rating exist, if there are none, then create the array
+            // Check to see if the rating exist, if there are none, 
+            // then create the array.
             data.Ratings ??= new int[] { };
 
             // Add the Rating to the Array
@@ -116,7 +115,7 @@
                 return null;
             }
 
-            // Update the data to the new passed in values
+            // Update the data to the new passed in values.
             articleData.Title = data.Title;
             articleData.Author = data.Author;
             articleData.Description = data.Description.Trim();
@@ -138,7 +137,6 @@
         /// </summary>
         private void SaveData(IEnumerable<ArticleModel> articles)
         {
-
             using var outputStream = File.Create(JsonFileName);
             JsonSerializer.Serialize<IEnumerable<ArticleModel>>(
                 new Utf8JsonWriter(outputStream, new JsonWriterOptions
@@ -191,6 +189,5 @@
 
             return data;
         }
-
     }
 }
