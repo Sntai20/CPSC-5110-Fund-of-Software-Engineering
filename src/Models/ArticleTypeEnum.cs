@@ -12,6 +12,7 @@
         Music = 55,
         Food = 63,
     }
+    
     /// <summary>
     /// Define Article Type enum extensions. 
     /// </summary>
@@ -21,7 +22,7 @@
         /// Display name of the Article type enum. 
         /// </summary>
         /// <param name="data"></param>
-        /// <returns></returns>
+        /// <returns>An article type as a string.</returns>
         public static string DisplayName(this ArticleTypeEnum data)
         {
             return data switch
