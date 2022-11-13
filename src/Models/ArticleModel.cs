@@ -20,8 +20,11 @@
         // Author Name
         [RegularExpression(@"^[a-zA-Z_\s-]{1,40}$", ErrorMessage = "Only upper case letters, lower case letters, spaces, and dashes are permitted.")]
         public string Author { get; set; }
-        
-        // Date article was published
+
+        // Date article was published with formatting.
+        [Display(Name = "Publish Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public string PublishDate { get; set; }
 
         // A link to the image file to display in article preview
