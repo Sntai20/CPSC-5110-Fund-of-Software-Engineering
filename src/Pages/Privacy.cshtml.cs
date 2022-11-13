@@ -3,26 +3,26 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
+     
     /// <summary>
-    /// Privacy page
+    /// Privacy page.
     /// </summary>
     public class PrivacyModel : PageModel
     {
         private readonly ILogger<PrivacyModel> _logger;
+       
         /// <summary>
-        /// Logger
+        /// Default constructor for the Privacy page.
         /// </summary>
-        /// <param name="logger"></param>
-
+        /// <param name="logger">Takes a ILogger.</param>
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
             _logger = logger;
         }
+        
         /// <summary>
         /// REST Get request
-        /// </summary>
-        
-        
+        /// </summary> 
         public void OnGet()
         {
         }
