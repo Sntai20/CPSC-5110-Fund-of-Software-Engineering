@@ -116,27 +116,9 @@
             }
 
             // Update the data to the new passed in values.
-            if (articleData.Title == null)
-            {
-                return null;
-            }
             articleData.Title = data.Title;
-
-
-            if (articleData.Description == null)
-            {
-                return null;
-            }
             articleData.Description = data.Description.Trim();
-            
-
-            if (articleData.Url == null)
-            {
-                return null;
-            }
             articleData.Url = data.Url;
-            
-
             articleData.Image = data.Image;
             articleData.Author = data.Author;
             articleData.PublishDate = data.PublishDate;
