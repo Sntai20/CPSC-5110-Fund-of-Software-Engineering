@@ -32,6 +32,7 @@
         public string Image { get; set; }
 
         // Web location for the article
+        [Required(ErrorMessage = "URL field is required.")]
         [RegularExpression(urlRegEx, ErrorMessage = "Invalid URL format.")]
         public string Url { get; set; }
 
