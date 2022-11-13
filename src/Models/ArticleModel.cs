@@ -28,6 +28,7 @@
 
         // A link to the image file to display in article preview
         [JsonPropertyName("img")]
+        [Required(ErrorMessage = "Image field is required.")]
         [RegularExpression(urlRegEx, ErrorMessage = "Invalid URL format.")]
         public string Image { get; set; }
 
