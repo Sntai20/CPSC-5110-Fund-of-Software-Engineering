@@ -6,22 +6,23 @@
     using System.Text.Json.Serialization;
     using static System.Net.WebRequestMethods;
 
+    /// <summary>
+    /// Define attributes of Article Model.
+    /// Properties: Unique Identifier, Author(s), Publish Date, URL, Image, Title, Tags, Article Text/Body.
+    /// </summary>
     public class ArticleModel
     {
-        /// <summary>
-        /// Define attributes of Article Model. 
-        /// </summary>
-        // Properties: Unique Identifier, Author(s), Publish Date, URL, Image, Title, Tags, Article Text/Body.
-
-        
         // Unique identifier for the article
         public string Id { get; set; }
 
         // Author Name
         [RegularExpression(@"^[a-zA-Z_\s-]{1,40}$", ErrorMessage = "Only upper case letters, lower case letters, spaces, and dashes are permitted.")]
         public string Author { get; set; }
-        
-        // Date article was published
+
+        // Date article was published with formatting.
+        [Display(Name = "Publish Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public string PublishDate { get; set; }
 
         // A link to the image file to display in article preview
@@ -44,13 +45,13 @@
         [StringLength(maximumLength: 700 , MinimumLength = 1, ErrorMessage = "The Description should have a length of more than {2} and up to {1} characters")]
         public string Description { get; set; }
 
-        // ratings for the article (remnant from Contoso Crafts site)
+        // Ratings for the article (remnant from Contoso Crafts site).
         public int[] Ratings { get; set; }
 
-        // An enum to decription the article category (tag)
+        // An enum to description the article category (tag).
         public ArticleTypeEnum ArticleType { get; set; } = ArticleTypeEnum.Undefined;
 
-        // Product price (remnant from the Contose Crafts site)
+        // Product price (remnant from the Contoso Crafts site)
         [Range(0, 10000, ErrorMessage = "Value for {0} must be at least {1} and no more than {2}.")]
         public int Price { get; set; }
 
@@ -58,7 +59,7 @@
         [StringLength(maximumLength: 1024, MinimumLength = 1, ErrorMessage = "Comments must have a length of more than {2} and up to {1} characters")]
         public List<CommentModel> CommentList { get; set; } = new List<CommentModel>();
 
-        // To string method to display article as a text stirng
+        // To string method to display article as a text string.
         public override string ToString() => JsonSerializer.Serialize<ArticleModel>(this);
     }
 }
