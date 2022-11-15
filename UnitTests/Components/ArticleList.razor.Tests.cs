@@ -1,5 +1,7 @@
 namespace UnitTests.Components
 {
+    using System.Linq;
+    using Bunit;
     using ContosoCrafts.WebSite.Components;
     using ContosoCrafts.WebSite.Services;
 
@@ -40,6 +42,31 @@ namespace UnitTests.Components
 
             // Assert
             Assert.AreEqual(true, result.Contains("Crater Lake in Winter"));
+        }
+
+        /// <summary>
+        /// Unit test to validate Select Product click
+        /// </summary>
+        [Test]
+        public void SelectProduct_Valid_ID_jenlooper_Should_Return_Content()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
+            var id = "MoreInfoButton_jenlooper-cactus";
+            var page = RenderComponent<ArticleList>();
+
+            // Find More Info button specific to id
+            var buttonList = page.FindAll("Button");
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Act
+            button.Click();
+
+            // Store markup for Assert statement
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains("Most days in November through May"));
         }
     }
 }
