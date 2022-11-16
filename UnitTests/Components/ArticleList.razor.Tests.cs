@@ -94,6 +94,9 @@
             Assert.AreEqual(true, pageMarkup.Contains("Be the first to vote!"));
         }
 
+        /// <summary>
+        /// Unit test for GetCurrentRating with multiple votes
+        /// </summary>
         [Test]
         public void GetCurrentRatings_Valid_More_Than_One_Rating_Should_Return_True()
         {
@@ -114,6 +117,32 @@
 
             // Assert
             Assert.AreEqual(true, pageMarkup.Contains("Votes"));
+
+        }
+
+        /// <summary>
+        /// Unit test for GetCurrentRating with a single vote
+        /// </summary>
+        [Test]
+        public void GetCurrentRatings_Valid_Single_Rating_Should_Return_True()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
+            var id = "MoreInfoButton_sailorhg-corsage";
+            var page = RenderComponent<ArticleList>();
+
+            // Find More Info button specific to id
+            var buttonList = page.FindAll("Button");
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Act
+            button.Click();
+
+            // Store markup for Assert statement
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains("1 Vote"));
 
         }
     }
