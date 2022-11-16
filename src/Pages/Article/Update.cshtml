@@ -8,8 +8,23 @@
 }
 
 <h1>Update</h1>
+<style>h1 { font-family: "Brush Script MT ",Lucida Handwriting,Cursive;}</style>
 
 <div class="container">
+    <style>
+        body{
+            background-color: peachpuff;
+        }
+            input[type=text]{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            font-family: "Brush Script MT ",Lucida Handwriting,Cursive;
+        }
+        }
+  
+        </style>
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @Html.HiddenFor(x => x.Article.Id)
