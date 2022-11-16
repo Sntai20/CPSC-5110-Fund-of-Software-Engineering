@@ -95,13 +95,12 @@
         {
             currentRating = 0;
             voteCount = 0;
+            return;
         }
-        else
-        {
             voteCount = selectedArticle.Ratings.Count();
             voteLabel = voteCount > 1 ? "Votes" : "Vote";
             currentRating = selectedArticle.Ratings.Sum() / voteCount;
-        }
+
 
         System.Console.WriteLine($"Current rating for {selectedArticle.Id}: {currentRating}");
     }

@@ -1,4 +1,4 @@
-namespace UnitTests.Components
+﻿namespace UnitTests.Components
 {
     using System.Linq;
     using Bunit;
@@ -68,5 +68,32 @@ namespace UnitTests.Components
             // Assert
             Assert.AreEqual(true, pageMarkup.Contains("Most days in November through May"));
         }
+
+        /// <summary>
+        /// Unit test for GetCurrentRatings method when no ratings exist
+        /// </summary>
+        [Test]
+        public void GetCurrentRatings_Invalid_Null_ArticleRatings_Should_Return_Zeros()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
+            var id = "MoreInfoButton_kate-lightshow";
+            var page = RenderComponent<ArticleList>();
+
+            // Find More Info button specific to id
+            var buttonList = page.FindAll("Button");
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Act
+            button.Click();
+
+            // Store markup for Assert statement
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains("Be the first to vote!"));
+        }
+
+
     }
 }
