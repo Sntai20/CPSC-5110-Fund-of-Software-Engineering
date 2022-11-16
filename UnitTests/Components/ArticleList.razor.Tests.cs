@@ -73,7 +73,7 @@
         /// Unit test for GetCurrentRatings method when no ratings exist
         /// </summary>
         [Test]
-        public void GetCurrentRatings_Invalid_Null_ArticleRatings_Should_Return_Zeros()
+        public void GetCurrentRatings_Valid_Null_ArticleRatings_Should_Return_Zeros()
         {
             // Arrange
             Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
@@ -94,6 +94,27 @@
             Assert.AreEqual(true, pageMarkup.Contains("Be the first to vote!"));
         }
 
+        [Test]
+        public void GetCurrentRatings_Valid_More_Than_One_Rating_Should_Return_True()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
+            var id = "MoreInfoButton_jenlooper-cactus";
+            var page = RenderComponent<ArticleList>();
 
+            // Find More Info button specific to id
+            var buttonList = page.FindAll("Button");
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Act
+            button.Click();
+
+            // Store markup for Assert statement
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains("Votes"));
+
+        }
     }
 }
