@@ -6,6 +6,16 @@
 }
 
 <h3>The biscuits may be undercooked, but the articles are spot on.</h3>
+<style>
+    h3{
+    font-family: "Brush Script MT ",Lucida Handwriting,Cursive;
+        font-size: 30px;
+    }
+        body{
+        background-color: peachpuff;
+    }
+    }
+</style>
 @(await Html.RenderComponentAsync<ArticleList>(RenderMode.ServerPrerendered))
 
 <script src="_framework/blazor.server.js"></script>
