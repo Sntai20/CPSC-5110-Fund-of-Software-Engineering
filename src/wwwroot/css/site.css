@@ -149,3 +149,7 @@ ul {
     background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
 }
+/*Carousel Settings*/
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.4)
+}
