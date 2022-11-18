@@ -1,10 +1,8 @@
-namespace ContosoCrafts.WebSite.Controllers
+﻿namespace ContosoCrafts.WebSite.Controllers
 {
     using System.Collections.Generic;
-
     using ContosoCrafts.WebSite.Models;
     using ContosoCrafts.WebSite.Services;
-
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]
@@ -20,6 +18,9 @@ namespace ContosoCrafts.WebSite.Controllers
             ArticleService = articleService;
         }
 
+        /// <summary>
+        /// Retrieve ArticleServer property
+        /// </summary>
         public JsonFileArticleService ArticleService { get; }
 
         [HttpGet]
