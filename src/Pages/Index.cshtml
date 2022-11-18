@@ -1,11 +1,15 @@
 ﻿@page
 @using ContosoCrafts.WebSite.Components
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileArticleService ArticleService
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
-
+<script src="_framework/blazor.server.js"></script>
 <h3>The biscuits may be undercooked, but the articles are spot on.</h3>
+
+<!--
 <style>
     h3{
     font-family: "Brush Script MT ",Lucida Handwriting,Cursive;
@@ -16,53 +20,36 @@
     }
     }
 </style>
+-->
 
+<h3>Articles worth reading!</h3>
 
-
-<div id="mycarousel" class="carousel slide" data-ride="carousel" style="margin-top:-15px">
-
-    <ol class="carousel-indicator">
-        <li data-target="#mycarousel" data-slide-to="0" ></li
-        <li data-target="#mycarousel" data-slide-to="1" class="active"></li
-        <li data-target="#mycarousel" data-slide-to="2"></li
-    </ol>
-
-    <div class="carousel-inner" role="listbox">
-        <div class="item">
-            <img src="~/Content/Images/music.jpg" />
-            <div class="carousel-caption">
-                <p>Image 0</p>
-            </div>
-        </div>
-
-        <div class="item" active>
-            <img src="~/Content/Images/training.jpg" />
-            <div class="carousel-caption">
-                <p>Image 1</p>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="~/Content/Images/website.jpg" />
-            <div class="carousel-caption">
-                <p>Image 2</p>
-            </div>
-        </div>
+<div id="mycarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        @{
+            int i = 0;
+            foreach (var article in ArticleService.GetAllData())
+            {
+                string classText = (i == 0) ? "active" : "";
+                <div class="carousel-item + @classText">
+                    <img src="@article.Image" class="d-block w-100"/>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>@article.Title</h5>
+                        <p>@article.Description</p>
+                    </div>
+                </div>
+                i++;
+            }
+        }
     </div>
-
-    <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-
-    <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-
-
-
 </div>
-@(await Html.RenderComponentAsync<ArticleList>(RenderMode.ServerPrerendered))
 
-<script src="_framework/blazor.server.js"></script>
+<a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+
+<a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>
