@@ -31,13 +31,15 @@
             foreach (var article in ArticleService.GetAllData())
             {
                 string classText = (i == 0) ? "active" : "";
-                <div class="carousel-item + @classText">
-                    <img src="@article.Image" class="d-block w-100"/>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>@article.Title</h5>
-                        <p>@article.Description</p>
+                    <div class="carousel-item + @classText">
+                        <div class="d-flex justify-content-center w-100 h-100">
+                            <img src="@article.Image" height="600" margin=auto>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>@article.Title</h5>
+                                <p>@article.Description</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 i++;
             }
         }
