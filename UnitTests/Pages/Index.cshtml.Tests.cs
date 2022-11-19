@@ -1,13 +1,9 @@
 ﻿namespace UnitTests.Pages
 {
     using System.Linq;
-
     using ContosoCrafts.WebSite.Pages;
-
     using Microsoft.Extensions.Logging;
-
     using Moq;
-
     using NUnit.Framework;
 
     /// <summary>
@@ -19,7 +15,6 @@
 
         // Data field to hold Index page for this test
         public static IndexModel pageModel;
-
 
         /// <summary>
         /// Set up test prior to execution
@@ -33,7 +28,6 @@
             {
             };
         }
-
         #endregion TestSetup
 
         #region OnGet
@@ -49,7 +43,6 @@
 
             // Act
             pageModel.OnGet();
-
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
