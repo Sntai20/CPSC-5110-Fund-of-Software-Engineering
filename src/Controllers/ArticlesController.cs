@@ -48,6 +48,7 @@
 
             return Ok();
         }
+
         /// <summary>
         /// Define a rating request class with article ID and rating. 
         /// </summary>
