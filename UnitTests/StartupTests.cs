@@ -2,9 +2,7 @@
 {
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
-
     using NUnit.Framework;
-
 
     /// <summary>
     /// Set of initial tests.
@@ -30,10 +28,11 @@
         }
         #endregion TestSetup
 
+        #region ConfigureServices
+
         /// <summary>
         /// Configure services after Start up.
         /// </summary>
-        #region ConfigureServices
         [Test]
         public void Startup_ConfigureServices_Valid_Defaut_Should_Pass()
         {
@@ -41,14 +40,15 @@
             Assert.IsNotNull(webHost);
         }
         #endregion ConfigureServices
+
         #region Configure
+
         [Test]
         public void Startup_Configure_Valid_Defaut_Should_Pass()
         {
             var webHost = Microsoft.AspNetCore.WebHost.CreateDefaultBuilder().UseStartup<Startup>().Build();
             Assert.IsNotNull(webHost);
         }
-
         #endregion Configure
     }
 }
