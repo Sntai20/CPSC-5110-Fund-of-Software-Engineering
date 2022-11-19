@@ -48,7 +48,7 @@
         public int[] Ratings { get; set; }
 
         // An enum to description the article category (tag).
-        public ArticleTypeEnum ArticleType { get; set; } = ArticleTypeEnum.Undefined;
+        public ArticleTypeEnumModel ArticleType { get; set; } = ArticleTypeEnumModel.Undefined;
 
         // Product price (remnant from the Contoso Crafts site)
         [Range(0, 10000, ErrorMessage = "Value for {0} must be at least {1} and no more than {2}.")]

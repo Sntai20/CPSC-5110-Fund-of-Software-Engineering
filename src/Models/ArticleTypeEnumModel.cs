@@ -3,7 +3,7 @@
     /// <summary>
     /// Define an enum for type Article. 
     /// </summary>
-    public enum ArticleTypeEnum
+    public enum ArticleTypeEnumModel
     {
         Undefined = 0,
         Travel = 1,
@@ -23,15 +23,15 @@
         /// </summary>
         /// <param name="data"></param>
         /// <returns>An article type as a string.</returns>
-        public static string DisplayName(this ArticleTypeEnum data)
+        public static string DisplayName(this ArticleTypeEnumModel data)
         {
             return data switch
             {
-                ArticleTypeEnum.Travel => "Travel",
-                ArticleTypeEnum.Books => "Books",
-                ArticleTypeEnum.News => "News",
-                ArticleTypeEnum.Music => "Music",
-                ArticleTypeEnum.Food => "Food",
+                ArticleTypeEnumModel.Travel => "Travel",
+                ArticleTypeEnumModel.Books => "Books",
+                ArticleTypeEnumModel.News => "News",
+                ArticleTypeEnumModel.Music => "Music",
+                ArticleTypeEnumModel.Food => "Food",
 
                 // Default, Unknown
                 _ => "",

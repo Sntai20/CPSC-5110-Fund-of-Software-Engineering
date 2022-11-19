@@ -20,12 +20,12 @@ namespace UnitTests.Models
             // Arrange
 
             // Act
-            var result1 = ArticleTypeEnum.Undefined.DisplayName();
-            var result2 = ArticleTypeEnum.Travel.DisplayName();
-            var result3 = ArticleTypeEnum.Books.DisplayName();
-            var result4 = ArticleTypeEnum.News.DisplayName();
-            var result5 = ArticleTypeEnum.Music.DisplayName();
-            var result6 = ArticleTypeEnum.Food.DisplayName();
+            var result1 = ArticleTypeEnumModel.Undefined.DisplayName();
+            var result2 = ArticleTypeEnumModel.Travel.DisplayName();
+            var result3 = ArticleTypeEnumModel.Books.DisplayName();
+            var result4 = ArticleTypeEnumModel.News.DisplayName();
+            var result5 = ArticleTypeEnumModel.Music.DisplayName();
+            var result6 = ArticleTypeEnumModel.Food.DisplayName();
 
             // Assert
             Assert.AreEqual("", result1);
