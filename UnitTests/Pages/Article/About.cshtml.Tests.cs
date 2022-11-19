@@ -1,11 +1,8 @@
 ﻿namespace UnitTests.Pages
 {
     using ContosoCrafts.WebSite.Pages;
-
     using Microsoft.Extensions.Logging;
-
     using Moq;
-
     using NUnit.Framework;
 
     /// <summary>
@@ -36,7 +33,6 @@
         #endregion TestSetup
 
         #region OnGet
-
 
         /// <summary>
         /// Test OnGet method for valid result
