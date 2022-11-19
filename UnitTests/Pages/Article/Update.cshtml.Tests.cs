@@ -1,18 +1,18 @@
 ﻿namespace UnitTests.Pages.Article
 {
-
     using ContosoCrafts.WebSite.Models;
     using ContosoCrafts.WebSite.Pages.Article;
-
     using Microsoft.AspNetCore.Mvc;
-
     using NUnit.Framework;
+
     /// <summary>
     /// This class holds the tests for the Update.cshtml.Tests.cs.
     /// </summary>
     public class UpdateTests
     {
         #region TestSetup
+
+        // pageModel for Updating data records
         public static UpdateModel pageModel;
 
         /// <summary>
