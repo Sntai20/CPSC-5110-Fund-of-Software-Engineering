@@ -4,9 +4,7 @@
     using Bunit;
     using ContosoCrafts.WebSite.Components;
     using ContosoCrafts.WebSite.Services;
-
     using Microsoft.Extensions.DependencyInjection;
-
     using NUnit.Framework;
 
 
