@@ -2,7 +2,6 @@
 {
     using ContosoCrafts.WebSite.Pages.Article;
     using ContosoCrafts.WebSite.Services;
-
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
@@ -12,16 +11,16 @@
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     using Microsoft.AspNetCore.Routing;
     using Microsoft.Extensions.Logging;
-
     using Moq;
-
     using NUnit.Framework;
+
     /// <summary>
     /// This class holds the tests for the Index.cshtml.Tests.cs
     /// </summary>
     public class IndexTests
     {
         #region TestSetup
+
         // A factory for creating IUrlHelper instances.
         public static IUrlHelperFactory urlHelperFactory;
 
