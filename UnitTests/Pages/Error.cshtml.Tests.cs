@@ -1,13 +1,9 @@
 ﻿namespace UnitTests.Pages
 {
     using System.Diagnostics;
-
     using ContosoCrafts.WebSite.Pages;
-
     using Microsoft.Extensions.Logging;
-
     using Moq;
-
     using NUnit.Framework;
 
     /// <summary>
