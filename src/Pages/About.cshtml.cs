@@ -1,8 +1,5 @@
 ﻿namespace ContosoCrafts.WebSite.Pages
 {
-    using System.Collections.Generic;
-    using ContosoCrafts.WebSite.Models;
-    using ContosoCrafts.WebSite.Services;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
 
