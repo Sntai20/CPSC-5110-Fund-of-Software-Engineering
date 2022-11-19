@@ -6,6 +6,9 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
 
+    /// <summary>
+    /// Provide a detailed view of the Article
+    /// </summary>
     public class ReadModel : PageModel
     {
         // Data middle tier
