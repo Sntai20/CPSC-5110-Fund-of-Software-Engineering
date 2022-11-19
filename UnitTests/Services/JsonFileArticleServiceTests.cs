@@ -3,12 +3,9 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Text.Json;
-
-    using Bunit.Extensions;
-
-    using ContosoCrafts.WebSite.Models;
-
+    using System.Text.Json
+    using Bunit.Extensions
+    using ContosoCrafts.WebSite.Models
     using NUnit.Framework;
     
     /// <summary>
@@ -19,7 +16,6 @@
 
         #region TestSetup
 
-
         /// <summary>
         /// Initialize tests for JsonFileArticleService class
         /// </summary>
@@ -27,9 +23,7 @@
         public void TestInitialize()
         {
         }
-
         #endregion TestSetup
-
 
         #region GetAllData
 
