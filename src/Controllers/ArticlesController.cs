@@ -5,6 +5,9 @@
     using ContosoCrafts.WebSite.Services;
     using Microsoft.AspNetCore.Mvc;
 
+    /// <summary>
+    /// Article control class definition
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class ArticlesController : ControllerBase
@@ -23,6 +26,10 @@
         /// </summary>
         public JsonFileArticleService ArticleService { get; }
 
+        /// <summary>
+        /// Get all data from Json database
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<ArticleModel> Get()
         {
