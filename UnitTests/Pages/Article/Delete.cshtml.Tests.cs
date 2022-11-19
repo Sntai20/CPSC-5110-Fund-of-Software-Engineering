@@ -2,9 +2,7 @@
 {
     using ContosoCrafts.WebSite.Models;
     using ContosoCrafts.WebSite.Pages.Article;
-
     using Microsoft.AspNetCore.Mvc;
-
     using NUnit.Framework;
 
     /// <summary>
