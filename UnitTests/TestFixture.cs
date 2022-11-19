@@ -1,7 +1,6 @@
 ﻿namespace UnitTests
 {
     using System.IO;
-
     using NUnit.Framework;
 
     [SetUpFixture]

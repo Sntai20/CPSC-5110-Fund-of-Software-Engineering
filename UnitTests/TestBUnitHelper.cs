@@ -1,7 +1,6 @@
 ﻿namespace UnitTests
 {
     using Bunit;
-
     using NUnit.Framework;
 
     /// <summary>
