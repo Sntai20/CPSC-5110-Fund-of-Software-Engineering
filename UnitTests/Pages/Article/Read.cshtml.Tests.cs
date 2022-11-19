@@ -1,11 +1,9 @@
 ﻿namespace UnitTests.Pages.Article
 {
     using System.Linq;
-
     using ContosoCrafts.WebSite.Pages.Article;
     using ContosoCrafts.WebSite.Services;
     using ContosoCrafts.WebSite.Models;
-
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
@@ -15,9 +13,7 @@
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     using Microsoft.AspNetCore.Routing;
     using Microsoft.Extensions.Logging;
-
     using Moq;
-
     using NUnit.Framework;
     
     /// <summary>
@@ -55,7 +51,6 @@
 
         // Data field for ReadModel
         public static ReadModel pageModel;
-
 
         /// <summary>
         /// Setup test prior to execution.
@@ -126,6 +121,8 @@
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
         }
+
         #endregion OnGet
+
     }
 }
