@@ -1,11 +1,8 @@
 ﻿namespace UnitTests.Pages
 {
     using ContosoCrafts.WebSite.Pages;
-
     using Microsoft.Extensions.Logging;
-
     using Moq;
-
     using NUnit.Framework;
 
     /// <summary>
@@ -14,6 +11,7 @@
     public class PrivacyTests
     {
         #region TestSetup
+
         // page model for class
         public static PrivacyModel pageModel;
 
@@ -21,7 +19,6 @@
         /// Setup the test prior to execution
         /// </summary>
         [SetUp]
-
         public void TestInitialize()
         {
             var MockLoggerDirect = Mock.Of<ILogger<PrivacyModel>>();
@@ -32,11 +29,9 @@
                 TempData = TestHelper.TempData,
             };
         }
-
         #endregion TestSetup
 
         #region OnGet
-
 
         /// <summary>
         /// Test OnGet method for valid result
@@ -54,7 +49,6 @@
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
         }
-
         #endregion OnGet
     }
 }
