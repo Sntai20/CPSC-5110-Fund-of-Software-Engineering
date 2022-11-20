@@ -16,7 +16,7 @@
         /// <summary>
         /// Default Constructor
         /// </summary>
-        /// <param name="productService">The service responsible for interacting with the data store.</param>
+        /// <param name="articleService">The service responsible for interacting with the data store.</param>
         public CreateModel(JsonFileArticleService articleService)
         {
             ArticleService = articleService;
