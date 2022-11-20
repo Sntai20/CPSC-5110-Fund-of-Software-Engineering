@@ -3,9 +3,9 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Text.Json
-    using Bunit.Extensions
-    using ContosoCrafts.WebSite.Models
+    using System.Text.Json;
+    using Bunit.Extensions;
+    using ContosoCrafts.WebSite.Models;
     using NUnit.Framework;
     
     /// <summary>
