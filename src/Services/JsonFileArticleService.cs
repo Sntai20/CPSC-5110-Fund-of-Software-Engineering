@@ -1,5 +1,6 @@
 ﻿namespace ContosoCrafts.WebSite.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -7,9 +8,11 @@
     using ContosoCrafts.WebSite.Models;
     using Microsoft.AspNetCore.Hosting;
 
+    using static System.Net.Mime.MediaTypeNames;
+
     /// <summary>
     /// The JsonFileArticleService class is responsible for interacting with the
-    /// datastore. The datastore for this project is the articles.json file.
+    /// data store. The data store for this project is the articles.json file.
     /// </summary>
     public class JsonFileArticleService
     {
@@ -151,11 +154,11 @@
         /// After create the user can update to set values.
         /// </summary>
         /// <returns>The ArticleModel.</returns>
-        public ArticleModel CreateData()
+        public ArticleModel CreateArticle()
         {
-            var data = new ArticleModel()
+            ArticleModel article = new ArticleModel()
             {
-                Id = System.Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString(),
                 Title = "Default title",
                 Description = "Article description",
                 Url = "Article URL",
@@ -164,11 +167,11 @@
 
             // Get the current set, and append the new record to it because IEnumerable does not have Add.
             var dataSet = GetAllData();
-            dataSet = dataSet.Append(data);
+            dataSet = dataSet.Append(article);
 
             SaveData(dataSet);
 
-            return data;
+            return article;
         }
 
         /// <summary>
