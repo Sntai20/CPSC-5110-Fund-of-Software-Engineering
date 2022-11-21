@@ -127,6 +127,10 @@ h1 {
     /*font-family: 'Nunito', sans-serif;*/
     font-family: "Brush Script MT ",Lucida Handwriting,Cursive;
 }
+h3 {
+    font-family: "Brush Script MT ",Lucida Handwriting,Cursive;
+    font-size: 30px;
+}
 ul {
     font-family: 'Nunito', sans-serif;
 }
