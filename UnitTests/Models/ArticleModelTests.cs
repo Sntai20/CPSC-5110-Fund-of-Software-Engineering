@@ -20,6 +20,7 @@ namespace UnitTests.Models
         [Test]
         public void ToString_Valid_Null_ID_Should_Return_True()
         {
+
             // Arrange
             var data = TestHelper.ArticleService.GetAllData().First(x => x.Id == "jenlooper-cactus");
 
