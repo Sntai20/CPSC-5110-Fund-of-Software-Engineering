@@ -43,6 +43,9 @@
 
         #region Configure
 
+        /// <summary>
+        /// Using default startup configuration should pass.
+        /// </summary>
         [Test]
         public void Startup_Configure_Valid_Defaut_Should_Pass()
         {
