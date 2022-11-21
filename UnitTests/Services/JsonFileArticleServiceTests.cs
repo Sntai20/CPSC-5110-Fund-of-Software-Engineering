@@ -33,6 +33,7 @@
         [Test]
         public void GetAllData_Invalid_Does_Not_Return_Null_Or_Empty_Should_Return_False()
         {
+
             // Arrange
 
             // Act
@@ -48,6 +49,7 @@
         [Test]
         public void GetAllData_Valid_Returns_Contents_Of_Json_File_Should_Return_True()
         {
+
             // Arrange
 
             // read JSON file directly and convert to a string for comparison
@@ -75,6 +77,7 @@
         [Test]
         public void AddRating_InValid_Article_Null_Should_Return_False()
         {
+
             // Arrange
 
             // Act
@@ -90,6 +93,7 @@
         [Test]
         public void AddRating_InValid_Product_Empty_Should_Return_False()
         {
+
             // Arrange
 
             // Act
@@ -105,6 +109,7 @@
         [Test]
         public void AddRating_InValid_Data_Null_Should_Return_False()
         {
+
             // Arrange
 
             // Act
@@ -120,6 +125,7 @@
         [Test]
         public void AddRating_InValid_Negative_Rating_Should_Return_False()
         {
+
             // Arrange
             var productID = TestHelper.ArticleService.GetAllData().First().Id;
 
@@ -136,6 +142,7 @@
         [Test]
         public void AddRating_InValid_Too_High_Rating_Should_Return_False()
         {
+
             // Arrange
             var productID = TestHelper.ArticleService.GetAllData().First().Id;
 
@@ -152,6 +159,7 @@
         [Test]
         public void AddRating_Valid_Create_Data_Ratings_Array_Should_Return_True()
         {
+
             // Arrange
             // create a ArticleModel with no ratings.
             var data = TestHelper.ArticleService.CreateArticle();
@@ -170,6 +178,7 @@
         [Test]
         public void AddRating_Valid_Article_Rating_5_Should_Return_True()
         {
+
             // Arrange
 
             // Get the First data item
@@ -195,6 +204,7 @@
         [Test]
         public void CreateData_Valid_Last_Value_Matches_Created_Values_Should_Return_True()
         {
+
             // Arrange
 
             // Act
@@ -218,6 +228,7 @@
         [Test]
         public void UpdateData_Valid_Updated_Value_Matches_Should_Return_True()
         {
+
             // Arrange
             var data = TestHelper.ArticleService.GetAllData().FirstOrDefault();
             var data2 = data;
