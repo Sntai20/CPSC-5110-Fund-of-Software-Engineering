@@ -31,7 +31,7 @@
         /// <returns>Redirect the web page to the Update page populated with the data so the user can fill in the fields.</returns>
         public IActionResult OnGet()
         {
-            this.Article = ArticleService.CreateData();
+            this.Article = ArticleService.CreateArticle();
 
             return RedirectToPage("./Update", new { this.Article.Id });
         }
