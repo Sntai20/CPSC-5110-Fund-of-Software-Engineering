@@ -6,6 +6,7 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages.Article
 {
+
     /// <summary>
     /// Manage the Delete of the data for a single record.
     /// </summary>
