@@ -153,8 +153,8 @@
         public void AddRating_Valid_Create_Data_Ratings_Array_Should_Return_True()
         {
             // Arrange
-            // create a ProductModel with no ratings
-            var data = TestHelper.ArticleService.CreateData();
+            // create a ArticleModel with no ratings.
+            var data = TestHelper.ArticleService.CreateArticle();
 
             // Act
             var result = TestHelper.ArticleService.AddRating(data.Id, 4);
@@ -190,7 +190,7 @@
         #region CreateData
 
         /// <summary>
-        /// Testing typical, valid usage of CreateData method
+        /// Testing typical, valid usage of CreateArticle method
         /// </summary>
         [Test]
         public void CreateData_Valid_Last_Value_Matches_Created_Values_Should_Return_True()
@@ -198,7 +198,7 @@
             // Arrange
 
             // Act
-            var result = TestHelper.ArticleService.CreateData();
+            var result = TestHelper.ArticleService.CreateArticle();
             var last = TestHelper.ArticleService.GetAllData().Last();
 
             // Assert
