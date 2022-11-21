@@ -24,6 +24,7 @@
     /// </summary>
     public static class TestHelper
     {
+
         // URLHelperFactory defines the contract for the helper to build URLs for ASP.NET MVC within an application.
         public static IUrlHelperFactory UrlHelperFactory;
 
