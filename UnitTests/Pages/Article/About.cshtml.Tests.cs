@@ -40,6 +40,7 @@
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
+
             // Arrange
 
             // Act
