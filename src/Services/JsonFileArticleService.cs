@@ -52,7 +52,6 @@
 
         /// <summary>
         /// Add Rating
-        /// 
         /// Take in the article ID and the rating
         /// If the rating does not exist, add it
         /// Save the update
