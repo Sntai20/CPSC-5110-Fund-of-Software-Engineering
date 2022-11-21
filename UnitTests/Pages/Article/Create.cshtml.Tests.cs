@@ -100,12 +100,10 @@
         {
             // Arrange
 
-
             // Act
             _ = pageModel.OnGet();
 
             // Reset
-
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
