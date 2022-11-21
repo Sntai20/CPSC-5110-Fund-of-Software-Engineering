@@ -7,11 +7,13 @@ using NUnit.Framework;
 
 namespace UnitTests.Models
 {
+
     /// <summary>
     /// Test class for ArticleModel
     /// </summary>
     public class ArticleModelTests
     {
+
         /// <summary>
         /// Method to test valid input of an article
         /// </summary>
