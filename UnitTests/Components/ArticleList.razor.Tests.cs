@@ -3,10 +3,10 @@
     using System.Linq;
     using Bunit;
     using ContosoCrafts.WebSite.Components;
+    using ContosoCrafts.WebSite.Models;
     using ContosoCrafts.WebSite.Services;
     using Microsoft.Extensions.DependencyInjection;
     using NUnit.Framework;
-
 
     /// <summary>
     /// Article list test set.
@@ -35,7 +35,7 @@
             // Act
             var page = RenderComponent<ArticleList>();
 
-            // Get the Cards retrned
+            // Get the Cards returned
             var result = page.Markup;
 
             // Assert
@@ -43,10 +43,10 @@
         }
 
         /// <summary>
-        /// Unit test to validate Select Product click
+        /// Unit test to validate Select Article click
         /// </summary>
         [Test]
-        public void SelectProduct_Valid_ID_jenlooper_Should_Return_Content()
+        public void SelectArticle_Valid_ID_jenlooper_Should_Return_Content()
         {
             // Arrange
             Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
