@@ -10,6 +10,7 @@
     /// </summary>
     public class CreateModel : PageModel
     {
+
         // Data middle tier
         public JsonFileArticleService ArticleService { get; }
 
