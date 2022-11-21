@@ -20,9 +20,10 @@
         {
             ArticleService = articleService;
         }
-        //Data middle tier
+
         /// <summary>
-        /// Retrieve ArticleServer property
+        /// Retrieve ArticleServer property.
+        /// Data middle tier.
         /// </summary>
         public JsonFileArticleService ArticleService { get; }
 
@@ -34,28 +35,6 @@
         public IEnumerable<ArticleModel> Get()
         {
             return ArticleService.GetAllData();
-        }
-
-        /// <summary>
-        /// Add requested rating to article. 
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        [HttpPatch]
-        public ActionResult Patch([FromBody] RatingRequest request)
-        {
-            _ = ArticleService.AddRating(request.ArticleId, request.Rating);
-
-            return Ok();
-        }
-
-        /// <summary>
-        /// Define a rating request class with article ID and rating. 
-        /// </summary>
-        public class RatingRequest
-        {
-            public string ArticleId { get; set; }
-            public int Rating { get; set; }
         }
     }
 }
