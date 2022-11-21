@@ -12,6 +12,7 @@
     [Route("[controller]")]
     public class ArticlesController : ControllerBase
     {
+
         /// <summary>
         /// Controller class for Articles
         /// </summary>
