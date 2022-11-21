@@ -11,6 +11,7 @@
     /// </summary>
     public class IndexModel : PageModel
     {
+
         // message logging interface
         private readonly ILogger<IndexModel> logger;
 
