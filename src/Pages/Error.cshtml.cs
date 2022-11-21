@@ -19,7 +19,6 @@
         /// <summary>
         /// Check if request id is null or empty
         /// </summary>
-        
         // Boolean check to see if RequestID contains valid value
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
@@ -30,7 +29,6 @@
         /// Default contructor for ErrorModel
         /// </summary>
         /// <param name="logger">logger dependecy for ErrorModel</param>
-        
         // Log an error
         public ErrorModel(ILogger<ErrorModel> logger)
         {
