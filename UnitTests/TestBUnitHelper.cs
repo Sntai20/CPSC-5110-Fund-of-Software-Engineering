@@ -8,6 +8,7 @@
     /// </summary>
     public abstract class BunitTestContext : TestContextWrapper
     {
+
         // The Setup sets the context
         [SetUp]
         public void Setup()
