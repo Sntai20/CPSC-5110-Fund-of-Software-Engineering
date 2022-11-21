@@ -117,13 +117,15 @@ body {
     margin-bottom: 60px;
     /*Change background color of home page to powder blue.*/
     /*background-color: #e6f3ff;*/
-    background-color: #B6D0E2;
+    /*background-color: #B6D0E2;*/
+    background-color: peachpuff;
 }
 p {
     font-family: 'Nunito', sans-serif;
 }
 h1 {
-    font-family: 'Nunito', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
+    font-family: "Brush Script MT ",Lucida Handwriting,Cursive;
 }
 ul {
     font-family: 'Nunito', sans-serif;
