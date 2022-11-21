@@ -35,8 +35,8 @@
         public string Url { get; set; }
 
         // Article title
-        [RegularExpression(@"^\S*$", ErrorMessage = "No white space allowed")]
-        [Required(ErrorMessage = "Title field is required.")]
+        [RegularExpression(@"^(.*\S.*)$", ErrorMessage = "Title cannot be whitespace only.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Title field is required.")]
         [StringLength(maximumLength: 40, MinimumLength = 1, ErrorMessage = "The Title should have a length of at least {2} and up to {1} characters")]
         public string Title { get; set; }
 
