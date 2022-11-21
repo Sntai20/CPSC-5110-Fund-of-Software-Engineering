@@ -14,6 +14,7 @@
     public class ArticleListTests : BunitTestContext
     {
         #region TestSetup
+
         /// <summary>
         /// Initialize the test set.
         /// </summary>
@@ -23,12 +24,14 @@
         }
 
         #endregion TestSetup
+
         /// <summary>
         /// Test for returning list of articles. 
         /// </summary>
         [Test]
         public void ArticleList_Default_Should_Return_Content()
         {
+
             // Arrange
             _ = Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
 
@@ -48,6 +51,7 @@
         [Test]
         public void SelectArticle_Valid_ID_jenlooper_Should_Return_Content()
         {
+
             // Arrange
             Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
             var id = "MoreInfoButton_jenlooper-cactus";
@@ -73,6 +77,7 @@
         [Test]
         public void GetCurrentRatings_Valid_Null_ArticleRatings_Should_Return_Zeros()
         {
+
             // Arrange
             Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
             var id = "MoreInfoButton_kate-lightshow";
@@ -98,6 +103,7 @@
         [Test]
         public void GetCurrentRatings_Valid_More_Than_One_Rating_Should_Return_True()
         {
+
             // Arrange
             Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
             var id = "MoreInfoButton_jenlooper-cactus";
@@ -124,6 +130,7 @@
         [Test]
         public void GetCurrentRatings_Valid_Single_Rating_Should_Return_True()
         {
+
             // Arrange
             Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
             var id = "MoreInfoButton_sailorhg-corsage";
