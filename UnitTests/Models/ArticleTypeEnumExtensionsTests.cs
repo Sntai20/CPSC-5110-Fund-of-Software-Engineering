@@ -8,6 +8,7 @@ using NUnit.Framework;
 
 namespace UnitTests.Models
 {
+
     /// <summary>
     /// Test class for ArticleTypeEnumExtensions
     /// </summary>
