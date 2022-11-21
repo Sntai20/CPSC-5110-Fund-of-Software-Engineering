@@ -16,6 +16,7 @@
     /// </summary>
     public class JsonFileArticleService
     {
+
         /// <summary>
         /// This is the default constructor.
         /// </summary>
