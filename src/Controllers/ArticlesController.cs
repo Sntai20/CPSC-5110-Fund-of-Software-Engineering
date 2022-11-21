@@ -20,7 +20,7 @@
         {
             ArticleService = articleService;
         }
-
+        //Data middle tier
         /// <summary>
         /// Retrieve ArticleServer property
         /// </summary>
