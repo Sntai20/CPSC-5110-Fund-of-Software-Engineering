@@ -1,7 +1,7 @@
 [
   {
     "Id": "jenlooper-cactus",
-    "Author": "@jenlooper",
+    "Author": "Jen Looper",
     "PublishDate": "2000-01-01",
     "img": "https://www.nps.gov/npgallery/GetAsset/C0EF4686-1DD8-B71B-0BD1C1D3649E3BA6/proxy/hires?",
     "Url": "https://www.hackster.io/agent-hawking-1/the-quantified-cactus-an-easy-plant-soil-moisture-sensor-e65393",
@@ -17,7 +17,7 @@
   },
   {
     "Id": "aldous-huxley-brave-new-world",
-    "Author": "Aldous-Huxley",
+    "Author": "Aldous Huxley",
     "PublishDate": "1932-01-01",
     "img": "https://d3525k1ryd2155.cloudfront.net/h/597/041/1425041597.0.x.jpg",
     "Url": "https://www.goodreads.com/book/show/5129.Brave_New_World",
@@ -43,7 +43,7 @@
   },
   {
     "Id": "dev-csharp",
-    "Author": "javinpaul",
+    "Author": "Javin Paul",
     "PublishDate": "2016-03-31",
     "img": "https://miro.medium.com/max/720/1*Z2weuFPP2ewuBhbLzl-MUg.png",
     "Url": "https://medium.com/javarevisited/9-free-c-c-sharp-courses-and-tutorials-for-beginners-and-intermediate-programmers-best-of-lot-dc8c793aab31",
@@ -56,7 +56,7 @@
   },
   {
     "Id": "sailorhg-bubblesortpic",
-    "Author": "sailorhg",
+    "Author": "SailorHG",
     "PublishDate": "2011-10-31",
     "img": "https://cdn11.bigcommerce.com/s-8wy6p2/images/stencil/2000x2000/products/12401/126527/sojin-sojin-pg1-baby-grand-piano-or-polished-walnut__23712.1640794454.jpg?c=2",
     "Url": "https://twitter.com/sailorhg/status/1090107740049952770",
@@ -69,7 +69,7 @@
   },
   {
     "Id": "sailorhg-corsage",
-    "Author": "sailorhg",
+    "Author": "SailorHG",
     "PublishDate": "1973-06-06",
     "img": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/hostedimages/1507476752i/24119511.jpg",
     "Url": "https://twitter.com/sailorhg/status/1090113666911891456",
@@ -84,7 +84,7 @@
   },
   {
     "Id": "sailorhg-kit",
-    "Author": null,
+    "Author": "SailorHG",
     "PublishDate": "2012-02-02",
     "img": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2022/09/mummy-dogs-6532.webp",
     "Url": "https://iamafoodblog.com/mummy-dogs/",
@@ -123,7 +123,7 @@
   },
   {
     "Id": "selinazawacki-soi-pins",
-    "Author": "selinazawacki",
+    "Author": "Selina Zawacki",
     "PublishDate": "1969-07-13",
     "img": "https://www.cnet.com/a/img/resize/3580b336aae48a5a84bb6d801099b7d842715990/hub/2018/08/01/bde306b1-b431-45a4-820d-f63fc0aad868/001-2018-ford-mustang-gt-review.jpg?auto=webp\u0026width=1200",
     "Url": "https://www.instagram.com/p/BNm6hZzDoEF/",
@@ -136,7 +136,7 @@
   },
   {
     "Id": "vogueandcode-hipster-dev-bro",
-    "Author": "vogueandcode",
+    "Author": "Vogue and Code",
     "PublishDate": "1977-07-07",
     "img": "https://www.qromag.com/wp-content/uploads/2012/03/radioheadmar6a.jpg",
     "Url": "https://www.vogueandcode.com/shop/hipster-dev-bro",
@@ -188,7 +188,7 @@
   },
   {
     "Id": "selinazawacki-shirt",
-    "Author": "selinazawacki",
+    "Author": "Selina Zawacki",
     "PublishDate": "2008-09-15",
     "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/4-img-template-1644679255.jpg",
     "Url": "https://www.instagram.com/p/BEXlpiZCnJ3",
