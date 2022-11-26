@@ -16,6 +16,11 @@
     /// </summary>
     public class JsonFileArticleService
     {
+        private string defaultTitle = "Default title";
+        private string defaultDescription = "Article description";
+        private string defaultUrl = "Article URL";
+        private string defaultImage = "No image specified";
+
 
         /// <summary>
         /// This is the default constructor.
@@ -159,10 +164,10 @@
             ArticleModel article = new ArticleModel()
             {
                 Id = Guid.NewGuid().ToString(),
-                Title = "Default title",
-                Description = "Article description",
-                Url = "Article URL",
-                Image = "No image specified",
+                Title = defaultTitle,
+                Description = defaultDescription,
+                Url = defaultUrl,
+                Image = defaultImage,
             };
 
             // Get the current set, and append the new record to it because IEnumerable does not have Add.
