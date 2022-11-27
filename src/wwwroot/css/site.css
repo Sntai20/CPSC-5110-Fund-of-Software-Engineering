@@ -177,3 +177,19 @@ ul {
     font-size: 55px;
     color: black;
 }
+/* Read Page Configuration */
+/* Container holding the image and the text */
+.content {
+    position: relative;
+}
+
+/* Bottom right text */
+.image-header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
