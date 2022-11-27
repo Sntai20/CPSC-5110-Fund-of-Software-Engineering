@@ -50,7 +50,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 a.navbar-brand {
     white-space: normal;
-    font-family: 'Rubik Glitch', cursive;
+    font-family: 'Bangers', cursive;
     font-size: xx-large;
     text-align: center;
     word-break: break-all;
@@ -125,7 +125,7 @@ p {
 }
 h1 {
     /*font-family: 'Nunito', sans-serif;*/
-    font-family: "Brush Script MT ",Lucida Handwriting,Cursive;
+    font-family: 'Bangers', Cursive;
 }
 h3 {
     font-family: "Brush Script MT ",Lucida Handwriting,Cursive;
