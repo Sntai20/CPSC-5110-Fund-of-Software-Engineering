@@ -115,9 +115,6 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    /*Change background color of home page to powder blue.*/
-    /*background-color: #e6f3ff;*/
-    /*background-color: #B6D0E2;*/
     background-color: peachpuff;
 }
 p {
