@@ -4,10 +4,18 @@
 @model ContosoCrafts.WebSite.Pages.Article.UpdateModel
 
 @{
-    ViewData["Title"] = "Update page";
-}
+    if(Model.Article.Title == "Default title")
+    {
+        <h1>CREATE</h1>
+        ViewData["Title"] = "Create Page";
+    }
 
-<h1>Update</h1>
+    if (Model.Article.Title != "Default title")
+    {
+        <h1>UPDATE</h1>
+        ViewData["Title"] = "Update Page";
+    }
+}
 
 <div class="container">
     <form method="post">
