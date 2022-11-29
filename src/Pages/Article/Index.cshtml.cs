@@ -10,7 +10,6 @@
     /// </summary>
     public class IndexModel : PageModel
     {
-
         /// <summary>
         /// Default Constructor
         /// </summary>
