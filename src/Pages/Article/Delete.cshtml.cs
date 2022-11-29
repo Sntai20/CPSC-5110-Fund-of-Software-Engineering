@@ -1,11 +1,10 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc;
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
-
-namespace ContosoCrafts.WebSite.Pages.Article
+﻿namespace ContosoCrafts.WebSite.Pages.Article
 {
+    using System.Linq;
+    using Microsoft.AspNetCore.Mvc.RazorPages;
+    using Microsoft.AspNetCore.Mvc;
+    using ContosoCrafts.WebSite.Models;
+    using ContosoCrafts.WebSite.Services;
 
     /// <summary>
     /// Manage the Delete of the data for a single record.
