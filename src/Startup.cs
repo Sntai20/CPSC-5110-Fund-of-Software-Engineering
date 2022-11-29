@@ -71,13 +71,6 @@
                 _ = endpoints.MapRazorPages();
                 _ = endpoints.MapControllers();
                 _ = endpoints.MapBlazorHub();
-
-                // endpoints.MapGet("/articles", (context) => 
-                // {
-                //     var articles = app.ApplicationServices.GetService<JsonFileArticleService>().GetArticles();
-                //     var json = JsonSerializer.Serialize<IEnumerable<Article>>(articles);
-                //     return context.Response.WriteAsync(json);
-                // });
             });
         }
     }
