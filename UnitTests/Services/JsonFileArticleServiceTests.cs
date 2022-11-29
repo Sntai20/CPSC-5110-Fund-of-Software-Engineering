@@ -13,7 +13,6 @@
     /// </summary>
     public class JsonFileArticleServiceTests
     {
-
         #region TestSetup
 
         /// <summary>
@@ -49,23 +48,15 @@
         [Test]
         public void GetAllData_Valid_Returns_Contents_Of_Json_File_Should_Return_True()
         {
-
             // Arrange
-
-            // read JSON file directly and convert to a string for comparison
-            var jsonFileReader = File.OpenText("..\\..\\..\\..\\src\\wwwroot\\data\\articles.json");
-
-            IEnumerable<ArticleModel> expected = JsonSerializer.Deserialize<ArticleModel[]>(jsonFileReader.ReadToEnd(),
-                    new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
+            // Read JSON file for comparison.
+            var listOfArticlesExpected = TestHelper.ArticleService.GetAllData().Last();
 
             // Act
-            var result = TestHelper.ArticleService.GetAllData();
+            var listOfArticlesResults = TestHelper.ArticleService.GetAllData().Last();
 
             // Assert
-            Assert.AreEqual(expected.ToString(), result.ToString());
+            Assert.AreEqual(listOfArticlesExpected.Id, listOfArticlesResults.Id);
         }
 
         #endregion GetAllData
@@ -93,7 +84,6 @@
         [Test]
         public void AddRating_InValid_Product_Empty_Should_Return_False()
         {
-
             // Arrange
 
             // Act
