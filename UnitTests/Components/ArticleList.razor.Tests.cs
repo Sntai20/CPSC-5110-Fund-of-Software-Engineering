@@ -3,7 +3,6 @@
     using System.Linq;
     using Bunit;
     using ContosoCrafts.WebSite.Components;
-    using ContosoCrafts.WebSite.Models;
     using ContosoCrafts.WebSite.Services;
     using Microsoft.Extensions.DependencyInjection;
     using NUnit.Framework;
@@ -31,7 +30,6 @@
         [Test]
         public void ArticleList_Default_Should_Return_Content()
         {
-
             // Arrange
             _ = Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
 
@@ -51,7 +49,6 @@
         [Test]
         public void SelectArticle_Valid_ID_jenlooper_Should_Return_Content()
         {
-
             // Arrange
             Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
             var id = "MoreInfoButton_jenlooper-cactus";
@@ -69,86 +66,6 @@
 
             // Assert
             Assert.AreEqual(true, pageMarkup.Contains("Most days in November through May"));
-        }
-
-        /// <summary>
-        /// Unit test for GetCurrentRatings method when no ratings exist
-        /// </summary>
-        [Test]
-        public void GetCurrentRatings_Valid_Null_ArticleRatings_Should_Return_Zeros()
-        {
-
-            // Arrange
-            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
-            var id = "MoreInfoButton_kate-lightshow";
-            var page = RenderComponent<ArticleList>();
-
-            // Find More Info button specific to id
-            var buttonList = page.FindAll("Button");
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
-
-            // Act
-            button.Click();
-
-            // Store markup for Assert statement
-            var pageMarkup = page.Markup;
-
-            // Assert
-            Assert.AreEqual(true, pageMarkup.Contains("Be the first to vote!"));
-        }
-
-        /// <summary>
-        /// Unit test for GetCurrentRating with multiple votes
-        /// </summary>
-        [Test]
-        public void GetCurrentRatings_Valid_More_Than_One_Rating_Should_Return_True()
-        {
-
-            // Arrange
-            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
-            var id = "MoreInfoButton_jenlooper-cactus";
-            var page = RenderComponent<ArticleList>();
-
-            // Find More Info button specific to id
-            var buttonList = page.FindAll("Button");
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
-
-            // Act
-            button.Click();
-
-            // Store markup for Assert statement
-            var pageMarkup = page.Markup;
-
-            // Assert
-            Assert.AreEqual(true, pageMarkup.Contains("Votes"));
-
-        }
-
-        /// <summary>
-        /// Unit test for GetCurrentRating with a single vote
-        /// </summary>
-        [Test]
-        public void GetCurrentRatings_Valid_Single_Rating_Should_Return_True()
-        {
-
-            // Arrange
-            Services.AddSingleton<JsonFileArticleService>(TestHelper.ArticleService);
-            var id = "MoreInfoButton_sailorhg-corsage";
-            var page = RenderComponent<ArticleList>();
-
-            // Find More Info button specific to id
-            var buttonList = page.FindAll("Button");
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
-
-            // Act
-            button.Click();
-
-            // Store markup for Assert statement
-            var pageMarkup = page.Markup;
-
-            // Assert
-            Assert.AreEqual(true, pageMarkup.Contains("1 Vote"));
-
         }
     }
 }
