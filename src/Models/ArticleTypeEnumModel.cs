@@ -18,7 +18,6 @@
     /// </summary>
     public static class ArticleTypeEnumExtensions
     {
-
         /// <summary>
         /// Display name of the Article type enum. 
         /// </summary>
