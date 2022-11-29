@@ -7,7 +7,6 @@
     using System.Text.Json;
     using ContosoCrafts.WebSite.Models;
     using Microsoft.AspNetCore.Hosting;
-
     using static System.Net.Mime.MediaTypeNames;
 
     /// <summary>
@@ -20,7 +19,6 @@
         private string defaultDescription = "Article description";
         private string defaultUrl = "Article URL";
         private string defaultImage = "No image specified";
-
 
         /// <summary>
         /// This is the default constructor.
