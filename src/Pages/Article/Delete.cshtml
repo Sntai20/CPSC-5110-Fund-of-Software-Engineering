@@ -1,12 +1,11 @@
 ﻿@page "{id}"
 @using ContosoCrafts.WebSite.Services
-@inject JsonFileArticleService ProductService
+@inject JsonFileArticleService ArticleService
 @model ContosoCrafts.WebSite.Pages.Article.DeleteModel
 
 @{
     ViewData["Title"] = "Delete page";
 }
-
 
 <div class="container">
     <form method="post">
