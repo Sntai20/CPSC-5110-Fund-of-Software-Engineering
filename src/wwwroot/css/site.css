@@ -181,6 +181,8 @@ ul {
 /* Container holding the image and the text */
 .content {
     position: relative;
+    width: 800px;
+    margin: auto;
 }
 
 /* Bottom right text */
