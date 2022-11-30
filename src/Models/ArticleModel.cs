@@ -22,6 +22,7 @@
         [Display(Name = "Publish Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Invalid dates")]
         public string PublishDate { get; set; }
 
         // A link to the image file to display in article preview

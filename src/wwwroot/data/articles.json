@@ -198,5 +198,18 @@
     "ArticleType": 0,
     "Price": 0,
     "CommentList": []
+  },
+  {
+    "Id": "52897ad9-4777-4fbb-bc59-4f27a3bc5460",
+    "Author": null,
+    "PublishDate": null,
+    "img": "No image specified",
+    "Url": "Article URL",
+    "Title": "Default title",
+    "Description": "Article description",
+    "Ratings": null,
+    "ArticleType": 0,
+    "Price": 0,
+    "CommentList": []
   }
 ]
