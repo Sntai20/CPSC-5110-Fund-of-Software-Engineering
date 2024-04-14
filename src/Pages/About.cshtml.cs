@@ -1,30 +1,29 @@
-﻿namespace ContosoCrafts.WebSite.Pages
+﻿namespace ContosoCrafts.WebSite.Pages;
+
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+
+/// <summary>
+/// About Page will return team information.
+/// </summary>
+public class AboutModel : PageModel
 {
-    using Microsoft.AspNetCore.Mvc.RazorPages;
-    using Microsoft.Extensions.Logging;
+    // message logging interface
+    private readonly ILogger<AboutModel> logger;
 
     /// <summary>
-    /// About Page will return team information.
+    /// Default Constructor
     /// </summary>
-    public class AboutModel : PageModel
+    /// <param name="logger">Takes an ILogger.</param>
+    public AboutModel(ILogger<AboutModel> logger)
     {
-        // message logging interface
-        private readonly ILogger<AboutModel> logger;
+        this.logger = logger;
+    }
 
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        /// <param name="logger">Takes an ILogger.</param>
-        public AboutModel(ILogger<AboutModel> logger)
-        {
-            this.logger = logger;
-        }
-
-        /// <summary>
-        /// REST Get request
-        /// </summary> 
-        public void OnGet()
-        {
-        }
+    /// <summary>
+    /// REST Get request
+    /// </summary> 
+    public void OnGet()
+    {
     }
 }

@@ -1,43 +1,42 @@
-﻿namespace ContosoCrafts.WebSite.Pages.Article
+﻿namespace ContosoCrafts.WebSite.Pages.Article;
+
+using System.Linq;
+using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+/// <summary>
+/// Provide a detailed view of the Article
+/// </summary>
+public class ReadModel : PageModel
 {
-    using System.Linq;
-    using ContosoCrafts.WebSite.Models;
-    using ContosoCrafts.WebSite.Services;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Mvc.RazorPages;
+    // Data middle tier
+    public JsonFileArticleService ArticleService { get; }
 
     /// <summary>
-    /// Provide a detailed view of the Article
+    /// The default constructor.
     /// </summary>
-    public class ReadModel : PageModel
+    /// <param name="articleService">The service responsible for interacting with the data store.</param>
+    public ReadModel(JsonFileArticleService articleService)
     {
-        // Data middle tier
-        public JsonFileArticleService ArticleService { get; }
+        ArticleService = articleService;
+    }
 
-        /// <summary>
-        /// The default constructor.
-        /// </summary>
-        /// <param name="articleService">The service responsible for interacting with the data store.</param>
-        public ReadModel(JsonFileArticleService articleService)
+    // The data to show
+    public ArticleModel Article;
+
+    /// <summary>
+    /// REST Get request
+    /// </summary>
+    /// <param name="id">The article id as a string.</param>
+    public IActionResult OnGet(string id)
+    {
+        this.Article = ArticleService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
+        if (Article == null)
         {
-            ArticleService = articleService;
+            return RedirectToPage("./Index");
         }
-
-        // The data to show
-        public ArticleModel Article;
-
-        /// <summary>
-        /// REST Get request
-        /// </summary>
-        /// <param name="id">The article id as a string.</param>
-        public IActionResult OnGet(string id)
-        {
-            this.Article = ArticleService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
-            if (Article == null)
-            {
-                return RedirectToPage("./Index");
-            }
-            return Page();
-        }
+        return Page();
     }
 }

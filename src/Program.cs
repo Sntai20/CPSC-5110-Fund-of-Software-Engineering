@@ -1,30 +1,29 @@
-namespace ContosoCrafts.WebSite
+﻿namespace ContosoCrafts.WebSite;
+
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+
+/// <summary>
+/// Build and configure the web host.
+/// </summary>
+public class Program
 {
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Hosting;
+    public static void Main(string[] args)
+    {
+        CreateHostBuilder(args).Build().Run();
+    }
 
     /// <summary>
-    /// Build and configure the web host.
+    /// Create default builder and configure web host defaults.
     /// </summary>
-    public class Program
+    /// <param name="args"></param>
+    /// <returns></returns>
+    public static IHostBuilder CreateHostBuilder(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        /// <summary>
-        /// Create default builder and configure web host defaults.
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
-        public static IHostBuilder CreateHostBuilder(string[] args)
-        {
-            return Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    _ = webBuilder.UseStartup<Startup>();
-                });
-        }
+        return Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                _ = webBuilder.UseStartup<Startup>();
+            });
     }
 }
