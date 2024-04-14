@@ -77,7 +77,7 @@ public class ReadTests
 
         var mockWebHostEnvironment = new Mock<IWebHostEnvironment>();
         _ = mockWebHostEnvironment.Setup(m => m.EnvironmentName).Returns("Hosting:UnitTestEnvironment");
-        _ = mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../src/bin/Debug/net8.0/wwwroot");
+        _ = mockWebHostEnvironment.Setup(m => m.WebRootPath).Returns("../../../../bin/x64/Debug/net8.0/wwwroot");
         _ = mockWebHostEnvironment.Setup(m => m.ContentRootPath).Returns("./data/");
 
         var MockLoggerDirect = Mock.Of<ILogger<IndexModel>>();

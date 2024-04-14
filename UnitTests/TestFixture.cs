@@ -29,7 +29,7 @@ public class TestFixture
         // C:\repos\5110\ClassBaseline\src\bin\Debug\net5.0\wwwroot\data
 
         // path to data
-        var DataWebPath = "../../../../src/bin/Debug/net6.0/wwwroot/data";
+        var DataWebPath = "../../../../../src/bin/x64/Debug/net8.0/wwwroot/data";
         
         // path to unit test directory
         var DataUTDirectory = "wwwroot";
