@@ -1,7 +1,7 @@
-﻿using ContosoCrafts.WebSite.Models;
-using NUnit.Framework;
+﻿namespace UnitTests.Models;
 
-namespace UnitTests.Models;
+using ContosoCrafts.WebSite.Models;
+using NUnit.Framework;
 
 
 /// <summary>

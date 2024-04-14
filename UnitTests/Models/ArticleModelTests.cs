@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using NUnit.Framework;
+﻿namespace UnitTests.Models;
 
-namespace UnitTests.Models;
+using System.Linq;
+using NUnit.Framework;
 
 
 /// <summary>
