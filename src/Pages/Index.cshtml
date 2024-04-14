@@ -15,17 +15,17 @@
             foreach (var article in ArticleService.GetAllData())
             {
                 string classText = (i == 0) ? "active" : "";
-                    <div class="carousel-item + @classText">
-                        <div class="d-flex justify-content-center w-100 h-100">
-                            <a href="/Article/Read/@article.Id">
-                                <img src="@article.Image" margin=auto>
-                            </a>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>@article.Title</h5>
-                                <p>@article.Description</p>
-                            </div>
+                <div class="carousel-item + @classText">
+                    <div class="d-flex justify-content-center w-100 h-100">
+                        <a href="/Article/Read/@article.Id">
+                            <img src="@article.Image" margin=auto>
+                        </a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>@article.Title</h5>
+                            <p>@article.Description</p>
                         </div>
                     </div>
+                </div>
                 i++;
             }
         }

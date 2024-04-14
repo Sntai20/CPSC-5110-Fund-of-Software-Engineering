@@ -4,7 +4,7 @@
 @model ContosoCrafts.WebSite.Pages.Article.UpdateModel
 
 @{
-    if(Model.Article.Title == "Default title")
+    if (Model.Article.Title == "Default title")
     {
         <h1>CREATE</h1>
         ViewData["Title"] = "Create Page";
@@ -28,7 +28,7 @@
                 <input asp-for="Article.Title" class="form-control" />
                 <span asp-validation-for="Article.Title" class="text-danger"></span>
             </div>
-            
+
             &nbsp;
             &nbsp;
             &nbsp;
@@ -97,4 +97,4 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    }
+}
