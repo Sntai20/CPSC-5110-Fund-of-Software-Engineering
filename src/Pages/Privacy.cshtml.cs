@@ -1,9 +1,8 @@
 ﻿namespace ContosoCrafts.WebSite.Pages;
 
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
- 
+
 /// <summary>
 /// Privacy page.
 /// </summary>

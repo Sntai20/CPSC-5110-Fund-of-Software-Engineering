@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text.Json;
 using ContosoCrafts.WebSite.Models;
 using Microsoft.AspNetCore.Hosting;
-using static System.Net.Mime.MediaTypeNames;
 
 /// <summary>
 /// The JsonFileArticleService class is responsible for interacting with the

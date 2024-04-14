@@ -3,7 +3,6 @@
 using System.Linq;
 using ContosoCrafts.WebSite.Pages.Article;
 using ContosoCrafts.WebSite.Services;
-using ContosoCrafts.WebSite.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
