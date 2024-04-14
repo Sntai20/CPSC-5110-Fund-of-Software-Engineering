@@ -9,11 +9,9 @@ using NUnit.Framework;
 /// </summary>
 public class ArticleTypeEnumExtensions
 {
-
     [Test]
-    public void ArticleTyepEnum_Valid_Null_ID_Should_Return_True()
+    public void ArticleTypeEnum_Valid_Null_ID_Should_Return_True()
     {
-
         // Arrange
 
         // Act
@@ -25,12 +23,11 @@ public class ArticleTypeEnumExtensions
         var result6 = ArticleTypeEnumModel.Food.DisplayName();
 
         // Assert
-        Assert.AreEqual("", result1);
-        Assert.AreEqual("Travel", result2);
-        Assert.AreEqual("Books", result3);
-        Assert.AreEqual("News", result4);
-        Assert.AreEqual("Music", result5);
-        Assert.AreEqual("Food", result6);
-
+        Assert.That(Equals("", result1));
+        Assert.That(Equals("Travel", result2));
+        Assert.That(Equals("Books", result3));
+        Assert.That(Equals("News", result4));
+        Assert.That(Equals("Music", result5));
+        Assert.That(Equals("Food", result6));
     }
 }

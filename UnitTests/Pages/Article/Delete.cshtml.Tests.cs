@@ -42,8 +42,8 @@ public class DeleteTests
         pageModel.OnGet("selinazawacki-shirt");
 
         // Assert
-        Assert.AreEqual(true, pageModel.ModelState.IsValid);
-        Assert.AreEqual("Floppy Crop", pageModel.Article.Title);
+        Assert.That(Equals(true, pageModel.ModelState.IsValid));
+        Assert.That(Equals("Floppy Crop", pageModel.Article.Title));
     }
     #endregion OnGet
 
@@ -69,8 +69,8 @@ public class DeleteTests
         var result = pageModel.OnPost() as RedirectToPageResult;
 
         // Assert
-        Assert.AreEqual(true, pageModel.ModelState.IsValid);
-        Assert.AreEqual(true, result.PageName.Contains("Index"));
+        Assert.That(Equals(true, pageModel.ModelState.IsValid));
+        Assert.That(Equals(true, result.PageName.Contains("Index")));
     }
 
     /// <summary>
@@ -96,7 +96,7 @@ public class DeleteTests
         _ = pageModel.OnPost() as ActionResult;
 
         // Assert
-        Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        Assert.That(Equals(false, pageModel.ModelState.IsValid));
     }
     #endregion OnPostAsync
 }

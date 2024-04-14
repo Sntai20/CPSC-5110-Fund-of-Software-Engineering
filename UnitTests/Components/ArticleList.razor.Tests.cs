@@ -40,7 +40,7 @@ public class ArticleListTests : BunitTestContext
         var result = page.Markup;
 
         // Assert
-        Assert.AreEqual(true, result.Contains("Crater Lake in Winter"));
+        Assert.That(Equals(true, result.Contains("Crater Lake in Winter")));
     }
 
     /// <summary>
@@ -65,6 +65,6 @@ public class ArticleListTests : BunitTestContext
         var pageMarkup = page.Markup;
 
         // Assert
-        Assert.AreEqual(true, pageMarkup.Contains("Most days in November through May"));
+        Assert.That(Equals(true, pageMarkup.Contains("Most days in November through May")));
     }
 }

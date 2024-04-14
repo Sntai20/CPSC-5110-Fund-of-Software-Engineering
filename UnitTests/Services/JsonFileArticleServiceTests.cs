@@ -1,4 +1,5 @@
 ﻿namespace UnitTests.Services;
+
 using System.Linq;
 using Bunit.Extensions;
 using NUnit.Framework;
@@ -34,7 +35,7 @@ public class JsonFileArticleServiceTests
         var result = TestHelper.ArticleService.GetAllData();
 
         // Assert
-        Assert.AreEqual(false, result.IsNullOrEmpty());
+        Assert.That(result, Is.Not.Null.Or.Empty);
     }
 
     /// <summary>
@@ -51,7 +52,7 @@ public class JsonFileArticleServiceTests
         var listOfArticlesResults = TestHelper.ArticleService.GetAllData().Last();
 
         // Assert
-        Assert.AreEqual(listOfArticlesExpected.Id, listOfArticlesResults.Id);
+        Assert.That(Equals(listOfArticlesExpected.Id, listOfArticlesResults.Id));
     }
 
     #endregion GetAllData
@@ -63,14 +64,13 @@ public class JsonFileArticleServiceTests
     [Test]
     public void AddRating_InValid_Article_Null_Should_Return_False()
     {
-
         // Arrange
 
         // Act
         var result = TestHelper.ArticleService.AddRating(null, 1);
 
         // Assert
-        Assert.AreEqual(false, result);
+        Assert.That(Equals(false, result));
     }
 
     /// <summary>
@@ -85,7 +85,7 @@ public class JsonFileArticleServiceTests
         var result = TestHelper.ArticleService.AddRating("", 1);
 
         // Assert
-        Assert.AreEqual(false, result);
+        Assert.That(Equals(false, result));
     }
 
     /// <summary>
@@ -101,7 +101,7 @@ public class JsonFileArticleServiceTests
         var result = TestHelper.ArticleService.AddRating("Does not exist", 1);
 
         // Assert
-        Assert.AreEqual(false, result);
+        Assert.That(Equals(false, result));
     }
 
     /// <summary>
@@ -110,7 +110,6 @@ public class JsonFileArticleServiceTests
     [Test]
     public void AddRating_InValid_Negative_Rating_Should_Return_False()
     {
-
         // Arrange
         var productID = TestHelper.ArticleService.GetAllData().First().Id;
 
@@ -118,7 +117,7 @@ public class JsonFileArticleServiceTests
         var result = TestHelper.ArticleService.AddRating(productID, -1);
 
         // Assert
-        Assert.AreEqual(false, result);
+        Assert.That(Equals(false, result));
     }
 
     /// <summary>
@@ -135,7 +134,7 @@ public class JsonFileArticleServiceTests
         var result = TestHelper.ArticleService.AddRating(productID, 6);
 
         // Assert
-        Assert.AreEqual(false, result);
+        Assert.That(Equals(false, result));
     }
 
     /// <summary>
@@ -144,7 +143,6 @@ public class JsonFileArticleServiceTests
     [Test]
     public void AddRating_Valid_Create_Data_Ratings_Array_Should_Return_True()
     {
-
         // Arrange
         // create a ArticleModel with no ratings.
         var data = TestHelper.ArticleService.CreateArticle();
@@ -153,7 +151,7 @@ public class JsonFileArticleServiceTests
         var result = TestHelper.ArticleService.AddRating(data.Id, 4);
 
         // Assert
-        Assert.AreEqual(true, result);
+        Assert.That(Equals(true, result));
 
     }
 
@@ -163,7 +161,6 @@ public class JsonFileArticleServiceTests
     [Test]
     public void AddRating_Valid_Article_Rating_5_Should_Return_True()
     {
-
         // Arrange
 
         // Get the First data item
@@ -175,9 +172,9 @@ public class JsonFileArticleServiceTests
         var dataNewList = TestHelper.ArticleService.GetAllData().First();
 
         // Assert
-        Assert.AreEqual(true, result);
-        Assert.AreEqual(countOriginal + 1, dataNewList.Ratings.Length);
-        Assert.AreEqual(5, dataNewList.Ratings.Last());
+        Assert.That(Equals(true, result));
+        Assert.That(Equals(countOriginal + 1, dataNewList.Ratings.Length));
+        Assert.That(Equals(5, dataNewList.Ratings.Last()));
     }
     #endregion AddRating
 
@@ -189,7 +186,6 @@ public class JsonFileArticleServiceTests
     [Test]
     public void CreateData_Valid_Last_Value_Matches_Created_Values_Should_Return_True()
     {
-
         // Arrange
 
         // Act
@@ -197,11 +193,11 @@ public class JsonFileArticleServiceTests
         var last = TestHelper.ArticleService.GetAllData().Last();
 
         // Assert
-        Assert.AreEqual("Default title", result.Title);
-        Assert.AreEqual("Article description", result.Description);
-        Assert.AreEqual("Article URL", result.Url);
-        Assert.AreEqual("No image specified", result.Image);
-        Assert.AreEqual(result.Id, last.Id);
+        Assert.That(Equals("Default title", result.Title));
+        Assert.That(Equals("Article description", result.Description));
+        Assert.That(Equals("Article URL", result.Url));
+        Assert.That(Equals("No image specified", result.Image));
+        Assert.That(Equals(result.Id, last.Id));
     }
     #endregion CreateData
 
@@ -213,7 +209,6 @@ public class JsonFileArticleServiceTests
     [Test]
     public void UpdateData_Valid_Updated_Value_Matches_Should_Return_True()
     {
-
         // Arrange
         var data = TestHelper.ArticleService.GetAllData().FirstOrDefault();
         var data2 = data;
@@ -226,7 +221,7 @@ public class JsonFileArticleServiceTests
         _ = TestHelper.ArticleService.UpdateData(data);
 
         // Assert
-        Assert.AreEqual(data2.Title, result.Title);
+        Assert.That(Equals(data2.Title, result.Title));
     }
     #endregion UpdateData
 }

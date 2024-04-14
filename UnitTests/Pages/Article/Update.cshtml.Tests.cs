@@ -42,8 +42,8 @@ public class UpdateTests
         pageModel.OnGet("selinazawacki-shirt");
 
         // Assert
-        Assert.AreEqual(true, pageModel.ModelState.IsValid);
-        Assert.AreEqual("Floppy Crop", pageModel.Article.Title);
+        Assert.That(Equals(true, pageModel.ModelState.IsValid));
+        Assert.That(Equals("Floppy Crop", pageModel.Article.Title));
     }
     #endregion OnGet
 
@@ -68,8 +68,8 @@ public class UpdateTests
         var result = pageModel.OnPost() as RedirectToPageResult;
 
         // Assert
-        Assert.AreEqual(true, pageModel.ModelState.IsValid);
-        Assert.AreEqual(true, result.PageName.Contains("Index"));
+        Assert.That(Equals(true, pageModel.ModelState.IsValid));
+        Assert.That(Equals(true, result.PageName.Contains("Index")));
     }
 
 
@@ -96,7 +96,7 @@ public class UpdateTests
         _ = pageModel.OnPost() as ActionResult;
 
         // Assert
-        Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        Assert.That(Equals(false, pageModel.ModelState.IsValid));
     }
     #endregion OnPostAsync
 }

@@ -46,8 +46,8 @@ public class IndexTests
         pageModel.OnGet();
 
         // Assert
-        Assert.AreEqual(true, pageModel.ModelState.IsValid);
-        Assert.AreEqual(true, pageModel.Articles.ToList().Any());
+        Assert.That(Equals(true, pageModel.ModelState.IsValid));
+        Assert.That(Equals(true, pageModel.Articles.ToList().Any()));
     }
     #endregion OnGet
 }

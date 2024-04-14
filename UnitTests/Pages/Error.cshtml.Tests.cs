@@ -55,8 +55,8 @@ public class ErrorTests
         activity.Stop();
 
         // Assert
-        Assert.AreEqual(true, pageModel.ModelState.IsValid);
-        Assert.AreEqual(activity.Id, pageModel.RequestId);
+        Assert.That(Equals(true, pageModel.ModelState.IsValid));
+        Assert.That(Equals(activity.Id, pageModel.RequestId));
     }
 
     /// <summary>
@@ -74,9 +74,9 @@ public class ErrorTests
         // Reset
 
         // Assert
-        Assert.AreEqual(true, pageModel.ModelState.IsValid);
-        Assert.AreEqual("trace", pageModel.RequestId);
-        Assert.AreEqual(true, pageModel.ShowRequestId);
+        Assert.That(Equals(true, pageModel.ModelState.IsValid));
+        Assert.That(Equals("trace", pageModel.RequestId));
+        Assert.That(Equals(true, pageModel.ShowRequestId));
     }
     #endregion OnGet
 }

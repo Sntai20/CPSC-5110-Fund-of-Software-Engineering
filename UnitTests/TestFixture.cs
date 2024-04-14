@@ -37,7 +37,7 @@ public class TestFixture
         // path to unit test data
         var DataUTPath = DataUTDirectory + "/data";
 
-        // Delete the Detination folder
+        // Delete the Destination folder
         if (Directory.Exists(DataUTDirectory))
         {
             Directory.Delete(DataUTDirectory, true);

@@ -41,8 +41,8 @@ internal class ArticleControllerTests
         var actual = controller.Get().Count();
 
         // Assert
-        Assert.AreEqual(true, controller.ModelState.IsValid);
-        Assert.AreEqual(expected, actual);
+        Assert.That(Equals(true, controller.ModelState.IsValid));
+        Assert.That(Equals(expected, actual));
     }
 
     #endregion Get
