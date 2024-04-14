@@ -1,24 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.9" />
-  </ItemGroup>
-
   <ItemGroup>
     <Content Update="wwwroot\data\articles.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
-
-  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4data_4articles_1json__JsonSchema="https://docs.strmprivacy.io/jsonschema/BatchJob.json" /></VisualStudio></ProjectExtensions>
-
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties wwwroot_4data_4articles_1json__JsonSchema="https://docs.strmprivacy.io/jsonschema/BatchJob.json" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.4" />
+  </ItemGroup>
 </Project>

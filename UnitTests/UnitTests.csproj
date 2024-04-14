@@ -1,25 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-
+    <TargetFramework>net8.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="bunit" Version="1.12.6" />
+    <PackageReference Include="bunit" Version="1.27.17" />
     <PackageReference Include="Moq" Version="4.18.2" />
-    <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
+    <PackageReference Include="NUnit" Version="4.1.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
   </ItemGroup>
-
   <PropertyGroup>
     <RunSettingsFilePath>$(MSBuildProjectDirectory)\CodeCoverage.runsettings</RunSettingsFilePath>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\src\ContosoCrafts.WebSite.csproj" />
   </ItemGroup>
-
 </Project>
