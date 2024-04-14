@@ -6,19 +6,14 @@ using Microsoft.Extensions.Logging;
 /// <summary>
 /// Privacy page.
 /// </summary>
-public class PrivacyModel : PageModel
+/// <remarks>
+/// Default constructor for the Privacy page.
+/// </remarks>
+/// <param name="logger">Takes a ILogger.</param>
+public class PrivacyModel(ILogger<PrivacyModel> logger) : PageModel
 {
-    private readonly ILogger<PrivacyModel> _logger;
-   
-    /// <summary>
-    /// Default constructor for the Privacy page.
-    /// </summary>
-    /// <param name="logger">Takes a ILogger.</param>
-    public PrivacyModel(ILogger<PrivacyModel> logger)
-    {
-        _logger = logger;
-    }
-    
+    private readonly ILogger<PrivacyModel> _logger = logger;
+
     /// <summary>
     /// REST Get request
     /// </summary> 

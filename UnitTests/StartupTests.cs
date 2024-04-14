@@ -22,9 +22,8 @@ public class StartupTests
     /// <summary>
     /// Start up the Contoso crafts website.
     /// </summary>
-    public class Startup : ContosoCrafts.WebSite.Startup
+    public class Startup(IConfiguration config) : ContosoCrafts.WebSite.Startup(config)
     {
-        public Startup(IConfiguration config) : base(config) { }
     }
     #endregion TestSetup
 

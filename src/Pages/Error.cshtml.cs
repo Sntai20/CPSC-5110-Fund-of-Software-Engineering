@@ -5,12 +5,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
+/// <summary>
+/// Default contructor for ErrorModel
+/// </summary>
+/// <param name="logger">logger dependecy for ErrorModel</param>
 [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 
 /// <summary>
 /// Error page.
 /// </summary>
-public class ErrorModel : PageModel
+public class ErrorModel(ILogger<ErrorModel> logger) : PageModel
 {
 
     // The data to show, bind to it for the post.
@@ -23,18 +27,8 @@ public class ErrorModel : PageModel
     public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
     // Error logger item
-    private readonly ILogger<ErrorModel> _logger;
+    private readonly ILogger<ErrorModel> _logger = logger;
 
-    /// <summary>
-    /// Default contructor for ErrorModel
-    /// </summary>
-    /// <param name="logger">logger dependecy for ErrorModel</param>
-    // Log an error
-    public ErrorModel(ILogger<ErrorModel> logger)
-    {
-        _logger = logger;
-    }
-    
     /// <summary>
     /// REST Get request
     /// </summary>

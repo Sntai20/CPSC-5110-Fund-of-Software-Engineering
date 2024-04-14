@@ -8,21 +8,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 /// <summary>
 /// Index Page will return all the data to show the user.
 /// </summary>
-public class IndexModel : PageModel
+/// <remarks>
+/// Default Constructor
+/// </remarks>
+/// <param name="articleService">The service responsible for interacting with the data store.</param>
+public class IndexModel(JsonFileArticleService articleService) : PageModel
 {
-    /// <summary>
-    /// Default Constructor
-    /// </summary>
-    /// <param name="articleService">The service responsible for interacting with the data store.</param>
-    public IndexModel(JsonFileArticleService articleService)
-    {
-        ArticleService = articleService;
-    }
 
     /// <summary>
     /// Store the service responsible for interacting with the data store.
     /// </summary>
-    public JsonFileArticleService ArticleService { get; }
+    public JsonFileArticleService ArticleService { get; } = articleService;
 
     /// <summary>
     /// Collection of the Data.

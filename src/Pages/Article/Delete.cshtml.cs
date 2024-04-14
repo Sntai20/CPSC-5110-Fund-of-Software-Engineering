@@ -9,19 +9,14 @@ using ContosoCrafts.WebSite.Services;
 /// <summary>
 /// Manage the Delete of the data for a single record.
 /// </summary>
-public class DeleteModel : PageModel
+/// <remarks>
+/// Default Constructor
+/// </remarks>
+/// <param name="articleService">The service responsible for interacting with the data store.</param>
+public class DeleteModel(JsonFileArticleService articleService) : PageModel
 {
     // Data middle tier
-    public JsonFileArticleService ArticleService { get; }
-
-    /// <summary>
-    /// Default Constructor
-    /// </summary>
-    /// <param name="articleService">The service responsible for interacting with the data store.</param>
-    public DeleteModel(JsonFileArticleService articleService)
-    {
-        ArticleService = articleService;
-    }
+    public JsonFileArticleService ArticleService { get; } = articleService;
 
     // The data to show, bind to it for the post.
     [BindProperty]

@@ -9,19 +9,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 /// <summary>
 /// Manage the Update of the data for a single record.
 /// </summary>
-public class UpdateModel : PageModel
+/// <remarks>
+/// Default Constructor
+/// </remarks>
+/// <param name="articleService"></param>
+public class UpdateModel(JsonFileArticleService articleService) : PageModel
 {
     // Data middle tier
-    public JsonFileArticleService ArticleService { get; }
-
-    /// <summary>
-    /// Default Constructor
-    /// </summary>
-    /// <param name="articleService"></param>
-    public UpdateModel(JsonFileArticleService articleService)
-    {
-        ArticleService = articleService;
-    }
+    public JsonFileArticleService ArticleService { get; } = articleService;
 
     // The data to show, bind to it for the post.
     [BindProperty]

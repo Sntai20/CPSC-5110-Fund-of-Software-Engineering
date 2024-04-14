@@ -8,20 +8,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 /// <summary>
 /// Create Page
 /// </summary>
-public class CreateModel : PageModel
+/// <remarks>
+/// Default Constructor
+/// </remarks>
+/// <param name="articleService">The service responsible for interacting with the data store.</param>
+public class CreateModel(JsonFileArticleService articleService) : PageModel
 {
 
     // Data middle tier
-    public JsonFileArticleService ArticleService { get; }
-
-    /// <summary>
-    /// Default Constructor
-    /// </summary>
-    /// <param name="articleService">The service responsible for interacting with the data store.</param>
-    public CreateModel(JsonFileArticleService articleService)
-    {
-        ArticleService = articleService;
-    }
+    public JsonFileArticleService ArticleService { get; } = articleService;
 
     // The data to show
     public ArticleModel Article;

@@ -8,25 +8,19 @@ using Microsoft.AspNetCore.Mvc;
 /// <summary>
 /// Article control class definition
 /// </summary>
+/// <remarks>
+/// Controller class for Articles
+/// </remarks>
+/// <param name="articleService"></param>
 [ApiController]
 [Route("[controller]")]
-public class ArticlesController : ControllerBase
+public class ArticlesController(JsonFileArticleService articleService) : ControllerBase
 {
-
-    /// <summary>
-    /// Controller class for Articles
-    /// </summary>
-    /// <param name="articleService"></param>
-    public ArticlesController(JsonFileArticleService articleService)
-    {
-        ArticleService = articleService;
-    }
-
     /// <summary>
     /// Retrieve ArticleServer property.
     /// Data middle tier.
     /// </summary>
-    public JsonFileArticleService ArticleService { get; }
+    public JsonFileArticleService ArticleService { get; } = articleService;
 
     /// <summary>
     /// Get all data from Json database

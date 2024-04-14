@@ -9,19 +9,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 /// <summary>
 /// Provide a detailed view of the Article
 /// </summary>
-public class ReadModel : PageModel
+/// <remarks>
+/// The default constructor.
+/// </remarks>
+/// <param name="articleService">The service responsible for interacting with the data store.</param>
+public class ReadModel(JsonFileArticleService articleService) : PageModel
 {
     // Data middle tier
-    public JsonFileArticleService ArticleService { get; }
-
-    /// <summary>
-    /// The default constructor.
-    /// </summary>
-    /// <param name="articleService">The service responsible for interacting with the data store.</param>
-    public ReadModel(JsonFileArticleService articleService)
-    {
-        ArticleService = articleService;
-    }
+    public JsonFileArticleService ArticleService { get; } = articleService;
 
     // The data to show
     public ArticleModel Article;

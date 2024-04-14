@@ -12,7 +12,11 @@ using Microsoft.AspNetCore.Hosting;
 /// The JsonFileArticleService class is responsible for interacting with the
 /// data store. The data store for this project is the articles.json file.
 /// </summary>
-public class JsonFileArticleService
+/// <remarks>
+/// This is the default constructor.
+/// </remarks>
+/// <param name="webHostEnvironment">Provides the information about the web hosting environment an application is running in.</param>
+public class JsonFileArticleService(IWebHostEnvironment webHostEnvironment)
 {
     private string defaultTitle = "Default title";
     private string defaultDescription = "Article description";
@@ -20,18 +24,9 @@ public class JsonFileArticleService
     private string defaultImage = "No image specified";
 
     /// <summary>
-    /// This is the default constructor.
-    /// </summary>
-    /// <param name="webHostEnvironment">Provides the information about the web hosting environment an application is running in.</param>
-    public JsonFileArticleService(IWebHostEnvironment webHostEnvironment)
-    {
-        WebHostEnvironment = webHostEnvironment;
-    }
-
-    /// <summary>
     /// Store the information about the web hosting environment an application is running in.
     /// </summary>
-    public IWebHostEnvironment WebHostEnvironment { get; }
+    public IWebHostEnvironment WebHostEnvironment { get; } = webHostEnvironment;
 
     /// <summary>
     /// The full path of the json file, starting from the web root path.

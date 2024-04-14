@@ -6,19 +6,14 @@ using Microsoft.Extensions.Logging;
 /// <summary>
 /// About Page will return team information.
 /// </summary>
-public class AboutModel : PageModel
+/// <remarks>
+/// Default Constructor
+/// </remarks>
+/// <param name="logger">Takes an ILogger.</param>
+public class AboutModel(ILogger<AboutModel> logger) : PageModel
 {
     // message logging interface
-    private readonly ILogger<AboutModel> logger;
-
-    /// <summary>
-    /// Default Constructor
-    /// </summary>
-    /// <param name="logger">Takes an ILogger.</param>
-    public AboutModel(ILogger<AboutModel> logger)
-    {
-        this.logger = logger;
-    }
+    private readonly ILogger<AboutModel> logger = logger;
 
     /// <summary>
     /// REST Get request

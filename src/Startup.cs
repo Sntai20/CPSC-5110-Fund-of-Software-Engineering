@@ -10,21 +10,17 @@ using Microsoft.Extensions.Hosting;
 /// <summary>
 /// This class controls the startup behavior of the website.
 /// </summary>
-public class Startup
+/// <remarks>
+/// Constructor
+/// </remarks>
+/// <param name="configuration"></param>
+public class Startup(IConfiguration configuration)
 {
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    /// <param name="configuration"></param>
-    public Startup(IConfiguration configuration)
-    {
-        Configuration = configuration;
-    }
 
     /// <summary>
     /// Get method for Configuration property
     /// </summary>
-    public IConfiguration Configuration { get; }
+    public IConfiguration Configuration { get; } = configuration;
 
     /// <summary>
     /// This method gets called by the runtime. Use this method to add services to the container.
